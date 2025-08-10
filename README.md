@@ -1,6 +1,6 @@
 <h3>Hi, im <b>GAB644</b></h3>
 i draw and code. but i dont code a lot, and i code just for fun.
-<br><a href="https://sites.google.com/view/gab644/"><b>More Information about me</b></a>
+<br><a href="https://sites.google.com/view/gab644/information"><b>More Information about me</b></a>
 
 
 <h3>I code in</h3>
