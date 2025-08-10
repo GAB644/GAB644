@@ -8,6 +8,7 @@ i draw and code. but i dont code a lot, and i code just for fun.
 
 <h3>Sick ass projects i made</h3>
 <img src="https://raw.githubusercontent.com/GAB644/RPS-Python/refs/heads/main/Logo.png" height="60" weight="60"><a href="https://github.com/GAB644/RPS-Python">RPS! Python</a>
+<img src="assets/sgf.png" height="70" weight="70"><a href="https://spinning-triangle.neocities.org">spinning triangle</a>
 
 
 
