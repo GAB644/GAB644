@@ -12,5 +12,6 @@ i draw and code. but i dont code a lot, and i code just for fun.
 
 
 
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<!-- <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 <img src="assets/97 Sem Título_20250724234747.png">
+scrapped easter egg -->
