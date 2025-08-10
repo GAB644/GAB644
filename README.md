@@ -2,6 +2,7 @@
 i dont code a lot, and i code just for fun
 
 <h3>I code in</h3>
-<img src="assets/python" alt="Python">
-<img src="assets/lua" alt="Lua">
+<img src="assets/Python" alt="Python">
+<img src="assets/Html" alt="HTML5">
+<img src="assets/Lua" alt="Lua">
 <img src="assets/C++" alt="C++">
