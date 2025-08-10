@@ -8,3 +8,9 @@ i draw and code. but i dont code a lot, and i code just for fun.
 
 <h3>Sick ass projects i made</h3>
 <img src="https://raw.githubusercontent.com/GAB644/RPS-Python/refs/heads/main/Logo.png" height="60" weight="60"><a href="https://github.com/GAB644/RPS-Python">RPS! Python</a>
+
+
+
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<img src="assets/97 Sem Título_20250724234747.png">
