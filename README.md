@@ -1,7 +1,7 @@
 <h3>Hi, im <b>GAB644</b></h3>
 i draw and code. i code just for fun.
 <br>
-also check out <a href="https://sites google.com/view/gab644/">my awesome site</a>
+also check out <a href="https://sites.google.com/view/gab644">my awesome site</a>
 <br>
 <br>
 <a href="https://sites.google.com/view/gab644/information"><b>More Information about me</b></a>
