@@ -294,31 +294,31 @@ button:focus-visible {
 
 @font-face {
     font-family: 'IBMPlexSans';
-    src: url('./IBMPlexSans.ttf') format('truetype');
+    src: url('./fonts/IBMPlexSans.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 @font-face {
     font-family: 'IBMPlexSans';
-    src: url('./IBMPlexSans-Italic.ttf') format('truetype');
+    src: url('./fonts/IBMPlexSans-Italic.ttf') format('truetype');
     font-weight: normal;
     font-style: italic;
 }
 @font-face {
     font-family: 'Comfortaa';
-    src: url('./Comfortaa.ttf') format('truetype');
+    src: url('./fonts/Comfortaa.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 @font-face {
     font-family: 'ZCOOLKuaiLe';
-    src: url('./ZCOOLKuaiLe.ttf') format('truetype');
+    src: url('./fonts/ZCOOLKuaiLe.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 @font-face {
     font-family: 'Ubuntu';
-    src: url('./Ubuntu-Light.ttf') format('truetype');
+    src: url('./fonts/Ubuntu-Light.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
