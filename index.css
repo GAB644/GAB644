@@ -12,6 +12,68 @@ h1 {
     font-weight: Medium;
 }
 
+.buttonoutline,
+.buttonfilled,
+button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 34px;
+    padding: 6px 16px;
+    margin: 6px 0;
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    border-radius: 3px;
+    background: transparent;
+    color: #ffffff;
+    font: inherit;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+.buttonoutline a,
+.buttonfilled a,
+button a {
+    color: inherit;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.buttonoutline:focus-visible,
+.buttonfilled:focus-visible,
+button:focus-visible {
+    outline: 2px solid rgba(255, 255, 255, 0.8);
+    outline-offset: 2px;
+}
+
+.buttonoutline {
+    background: transparent;
+    border-color: rgba(255, 255, 255, 0.9);
+    color: #ffffff;
+}
+
+.buttonfilled {
+    background: #ffffff;
+    border-color: #ffffff;
+    color: #000b27;
+}
+
+.buttonoutline:hover {
+    background-color: rgb(49, 49, 49);
+    border-color: rgb(148, 148, 148);
+}
+
+.buttonfilled:hover {
+    color: black;
+    background: rgb(224, 223, 236);
+    border-color: rgb(226, 241, 255);
+}
+
 .top-bar {
     position: fixed;
     top: 0;
