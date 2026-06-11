@@ -12,6 +12,25 @@ h1 {
     font-weight: Medium;
 }
 
+.layer2 {
+    background-color: #0e1324;
+    color: #ffffff;
+    font-family: 'Ubuntu', sans-serif;
+    padding: 34px 26px 40px;
+}
+.layer3 {
+    background-color: #000000;
+    color: #ffffff;
+    font-family: 'Ubuntu', sans-serif;
+    padding: 24px 26px 40px;
+    margin: 0;
+}
+.layer3 h1 {
+    font-family: Georgia, 'Times New Roman', serif;
+    margin: 0;
+}
+
+
 .buttonoutline,
 .buttonfilled,
 button {
@@ -31,7 +50,6 @@ button {
     cursor: pointer;
     box-sizing: border-box;
 }
-
 .buttonoutline a,
 .buttonfilled a,
 button a {
@@ -43,31 +61,26 @@ button a {
     width: 100%;
     height: 100%;
 }
-
 .buttonoutline:focus-visible,
 .buttonfilled:focus-visible,
 button:focus-visible {
     outline: 2px solid rgba(255, 255, 255, 0.8);
     outline-offset: 2px;
 }
-
 .buttonoutline {
     background: transparent;
     border-color: rgba(255, 255, 255, 0.9);
     color: #ffffff;
 }
-
 .buttonfilled {
     background: #ffffff;
     border-color: #ffffff;
     color: #000b27;
 }
-
 .buttonoutline:hover {
     background-color: rgb(49, 49, 49);
     border-color: rgb(148, 148, 148);
 }
-
 .buttonfilled:hover {
     color: black;
     background: rgb(224, 223, 236);
@@ -89,13 +102,11 @@ button:focus-visible {
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     z-index: 1000; */
 }
-
 .top-bar__logo {
     display: inline-flex;
     align-items: center;
     text-decoration: none;
 }
-
 .top-bar__logo img {
     display: block;
     height: 57px;
@@ -115,24 +126,6 @@ button:focus-visible {
     .top-bar__logo img {
         height: 38px;
     }
-}
-
-.layer2 {
-    background-color: #0e1324;
-    color: #ffffff;
-    font-family: 'Ubuntu', sans-serif;
-    padding: 34px 26px 40px;
-}
-.layer3 {
-    background-color: #000000;
-    color: #ffffff;
-    font-family: 'Ubuntu', sans-serif;
-    padding: 24px 26px 40px;
-    margin: 0;
-}
-.layer3 h1 {
-    font-family: Georgia, 'Times New Roman', serif;
-    margin: 0;
 }
 
 /* really annoying to code grids */
@@ -226,7 +219,7 @@ button:focus-visible {
     padding: 12px 10px;
 }
 .link-card::before {
-    content: ''; /* why does this fix it i dont get it why */
+    content: '';
     position: absolute;
     inset: 0;
     border-radius: 5px;
