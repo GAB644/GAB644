@@ -32,6 +32,7 @@ h2 {
 }
 
 .layer3title {
+    image-rendering: pixelated;
     display: flex;
     align-items: center;
     gap: 12px;
@@ -99,6 +100,7 @@ button:focus-visible {
 }
 
 .top-bar {
+    image-rendering: pixelated;
     position: fixed;
     top: 0;
     left: 0;
@@ -258,6 +260,7 @@ button:focus-visible {
     opacity: 1;
 }
 .link-card img {
+    image-rendering: pixelated;
     display: block;
     width: 124px;
     height: 124px;
