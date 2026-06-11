@@ -1,0 +1,94 @@
+body { /* layer1 */
+    background-color: #000b27;
+    color: #ffffff;
+    font-family: 'IBMPlexSans', 'Ubuntu', sans-serif;
+    font-weight: normal;
+}
+h1 {
+    font-family: 'Comfortaa', sans-serif;
+    font-weight: Medium;
+}
+
+.layer2 {
+    background-color: #0e1324;
+    color: #ffffff;
+    font-family: 'Ubuntu', sans-serif;
+    padding: 34px 26px 40px;
+}
+.layer3 {
+    background-color: #000000;
+    color: #ffffff;
+    font-family: Georgia, 'Times New Roman', serif;
+}
+
+.link-grid {
+    max-width: 760px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    column-gap: 22px;
+    row-gap: 34px;
+    align-items: start;
+    justify-items: center;
+}
+.link-card {
+    color: #ffffff;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    text-align: center;
+    min-width: 0;
+}
+.link-card img {
+    display: block;
+    width: 124px;
+    height: 124px;
+    object-fit: contain;
+    image-rendering: auto;
+}
+.link-card span {
+    font-size: 16px;
+    line-height: 1.15;
+    white-space: nowrap;
+}
+.link-card small {
+    color: #87a8ff;
+    font-size: 11px;
+    line-height: 1.2;
+    margin-top: -4px;
+    white-space: nowrap;
+}
+
+
+@font-face {
+    font-family: 'IBMPlexSans';
+    src: url('./IBMPlexSans.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'IBMPlexSans';
+    src: url('./IBMPlexSans-Italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Comfortaa';
+    src: url('./Comfortaa.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'ZCOOLKuaiLe';
+    src: url('./ZCOOLKuaiLe.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Ubuntu';
+    src: url('./Ubuntu-Light.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
