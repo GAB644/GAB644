@@ -18,7 +18,13 @@ h1 {
 .layer3 {
     background-color: #000000;
     color: #ffffff;
+    font-family: 'Ubuntu', sans-serif;
+    padding: 24px 26px 40px;
+    margin: 0 -8px;
+}
+.layer3 h1 {
     font-family: Georgia, 'Times New Roman', serif;
+    margin: 0;
 }
 
 /* really annoying to code grids */
