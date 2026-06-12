@@ -109,11 +109,11 @@ button:focus-visible {
     display: flex;
     align-items: center;
     padding: 0 16px;
-/*    background: rgba(0, 11, 39, 0.425);
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(3px);
     -webkit-backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    z-index: 1000; */
+    background: #26222f70;
+    border-bottom: 1px solid #26222f;
+    z-index: 1000;
 }
 .top-bar p {
     font-family: 'RobotoCondensed';
