@@ -30,7 +30,6 @@ h2 {
     padding: 24px 26px 40px;
     margin: 0;
 }
-
 .layer3title {
     image-rendering: pixelated;
     display: flex;
@@ -109,11 +108,24 @@ button:focus-visible {
     display: flex;
     align-items: center;
     padding: 0 16px;
+    box-sizing: border-box;
+    background-color: rgba(38, 34, 47, 0);
+    border-bottom: 1px solid rgba(38, 34, 47, 0);
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+    z-index: 1000;
+    transition:
+        background-color 220ms ease,
+        border-bottom-color 220ms ease,
+        backdrop-filter 220ms ease,
+        -webkit-backdrop-filter 220ms ease;
+}
+
+.top-bar--scrolled {
+    background-color: rgba(38, 34, 47, 0.44);
+    border-bottom-color: rgba(38, 34, 47, 1);
     backdrop-filter: blur(3px);
     -webkit-backdrop-filter: blur(10px);
-    background: #26222f70;
-    border-bottom: 1px solid #26222f;
-    z-index: 1000;
 }
 .top-bar p {
     font-family: 'RobotoCondensed';
