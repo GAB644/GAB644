@@ -174,10 +174,35 @@
             border-radius: 0;
         }
         .sidebar__title {
-            margin: 0 0 8px;
+            margin: 0;
             font-size: 16px;
             font-weight: bold;
             color: #222222;
+        }
+        .sidebar__header {
+            display: block;
+            overflow: hidden;
+            margin-bottom: 8px;
+        }
+        .sidebar__actions {
+            float: right;
+            display: block;
+        }
+        .sidebar__button {
+            border: 1px solid #666666;
+            background-color: #d4d0c8;
+            color: #000000;
+            padding: 3px 8px;
+            border-radius: 0;
+            cursor: pointer;
+            font-family: inherit;
+            margin-left: 4px;
+        }
+        .sidebar__button:hover {
+            background-color: #e6e6e6;
+        }
+        .weather-widget {
+            min-height: 40px;
         }
         @media screen and (max-width: 980px) {
             .page-content {
@@ -237,15 +262,24 @@
         <iframe height="600px" width="780px" src="https://www.aol.com/"></iframe>
         <center><p>powered by AOL</p></center> 
     </div> -->
+    <div class="content-panel">
+        <div class="content-panel__title"></div>
+    </div>
 </div>
 <div class="sidebar">
-    <div class="sidebar__title">Weather</div>
-    <div class="topbar2__clock" id="topbar-clock"></div><br>
-    <script src="https://elfsightcdn.com/platform.js" async></script>
-    <div class="elfsight-app-5d2357b1-fd5e-452c-8928-b37052f6bbf4" data-elfsight-app-lazy></div>
+        <div class="sidebar__header">
+            <div class="sidebar__actions">
+                <button type="button" class="sidebar__button" id="weather-unit-toggle">C/F</button>
+                <button type="button" class="sidebar__button" id="weather-refresh">Refresh</button>
+            </div>
+            <div class="sidebar__title">Weather</div>
+        </div>
+        <div class="topbar2__clock" id="topbar-clock"></div><br>
+        <div class="weather-widget" id="ww_3edbeed94f67f" v='1.3' loc='auto' a='{"t":"horizontal","lang":"en","sl_lpl":1,"ids":[],"font":"Arial","sl_ics":"one","sl_sot":"celsius","cl_bkg":"#FFFFFF00","cl_font":"#000000","cl_cloud":"rgba(93,93,93,1)","cl_persp":"#2196F3","cl_sun":"#FFC107","cl_moon":"#FFC107","cl_thund":"#FF5722"}'>Weather Data Source: <a href="https://wetterlang.de" id="ww_3edbeed94f67f_u" target="_blank">Wettervorschau 30 tage</a></div>
+        <script id="weather-widget-script" async src="https://app3.weatherwidget.org/js/?id=ww_3edbeed94f67f"></script>
 </div>
 
-
+<script src="index.js" defer></script>
 <script>
     (function () {
         var clock = document.getElementById('topbar-clock');
@@ -282,9 +316,112 @@
 </script>
 <script>
     (function () {
+        var weatherWidgetId = 'ww_3edbeed94f67f';
+        var weatherStorageKey = 'gab644-weather-unit';
+        var weatherWidget = document.getElementById('ww_3edbeed94f67f');
+        var weatherUnitToggle = document.getElementById('weather-unit-toggle');
+        var weatherRefresh = document.getElementById('weather-refresh');
+        var weatherScriptUrl = 'https://app3.weatherwidget.org/js/?id=' + weatherWidgetId;
+        var weatherWidgetDefaultText = 'Weather Data Source: <a href="https://wetterlang.de" id="ww_3edbeed94f67f_u" target="_blank">Wettervorschau 30 tage</a>';
+
+        function getWeatherUnit() {
+            try {
+                return window.localStorage.getItem(weatherStorageKey) || 'celsius';
+            } catch (error) {
+                return 'celsius';
+            }
+        }
+
+        function setWeatherUnit(unit) {
+            var config;
+
+            if (!weatherWidget) {
+                return;
+            }
+
+            config = '{"t":"horizontal","lang":"en","sl_lpl":1,"ids":[],"font":"Arial","sl_ics":"one","sl_sot":"' + unit + '","cl_bkg":"#FFFFFF00","cl_font":"#000000","cl_cloud":"rgba(93,93,93,1)","cl_persp":"#2196F3","cl_sun":"#FFC107","cl_moon":"#FFC107","cl_thund":"#FF5722"}';
+            weatherWidget.setAttribute('a', config);
+
+            try {
+                window.localStorage.setItem(weatherStorageKey, unit);
+            } catch (error2) {
+                return;
+            }
+        }
+
+        function insertWeatherScript() {
+            var existingScript;
+            var newScript;
+
+            if (!weatherWidget) {
+                return;
+            }
+
+            existingScript = document.getElementById('weather-widget-script');
+            if (existingScript && existingScript.parentNode) {
+                existingScript.parentNode.removeChild(existingScript);
+            }
+
+            newScript = document.createElement('script');
+            newScript.id = 'weather-widget-script';
+            newScript.async = true;
+            newScript.src = weatherScriptUrl + '&ts=' + new Date().getTime();
+
+            if (weatherWidget.nextSibling) {
+                weatherWidget.parentNode.insertBefore(newScript, weatherWidget.nextSibling);
+            } else {
+                weatherWidget.parentNode.appendChild(newScript);
+            }
+        }
+
+        function rebuildWeatherWidget() {
+            var weatherWidgetClone;
+
+            if (!weatherWidget || !weatherWidget.parentNode) {
+                return;
+            }
+
+            weatherWidgetClone = weatherWidget.cloneNode(false);
+            weatherWidgetClone.innerHTML = weatherWidgetDefaultText;
+            weatherWidget.parentNode.replaceChild(weatherWidgetClone, weatherWidget);
+            weatherWidget = weatherWidgetClone;
+            insertWeatherScript();
+        }
+
+        function refreshWeatherWidget() {
+            rebuildWeatherWidget();
+        }
+
+        function updateWeatherToggleLabel() {
+            if (!weatherUnitToggle) {
+                return;
+            }
+
+            weatherUnitToggle.innerHTML = getWeatherUnit() === 'fahrenheit' ? 'C' : 'F';
+        }
+
+        if (weatherWidget && weatherUnitToggle && weatherRefresh) {
+            setWeatherUnit(getWeatherUnit());
+            updateWeatherToggleLabel();
+            insertWeatherScript();
+
+            weatherUnitToggle.onclick = function () {
+                var nextUnit = getWeatherUnit() === 'fahrenheit' ? 'celsius' : 'fahrenheit';
+
+                setWeatherUnit(nextUnit);
+                updateWeatherToggleLabel();
+                rebuildWeatherWidget();
+            };
+
+            weatherRefresh.onclick = function () {
+                refreshWeatherWidget();
+            };
+        }
+
         var storageKey = 'gab644-shortcuts';
         var createPanelKey = 'gab644-shortcut-create-collapsed';
         var defaultShortcuts = [    
+            { title: 'Music', url: 'music' },
             { title: 'Games', url: '/Flashy' },
             { title: 'Google News', url: 'https://news.google.com/home' }
         ];
