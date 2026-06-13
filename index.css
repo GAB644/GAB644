@@ -193,6 +193,7 @@ button:focus-visible {
 }
 .music-player__title {
     font-weight: lighter;
+    color: white;
     text-shadow: #ffffff 5px 2px 10px;
     font-family: 'ZCOOLKuaiLe', 'Ubuntu', sans-serif;
     font-size: 14px;
@@ -260,7 +261,6 @@ button:focus-visible {
     }
 }
 
-/* really annoying to code grids */
 .link-grid {
     max-width: 760px;
     margin: 0 auto;
