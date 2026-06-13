@@ -104,7 +104,7 @@ function ensureMusicPlayer() {
 
     const wrapper = document.createElement('section');
     wrapper.className = 'music-player';
-    wrapper.setAttribute('musik plater');
+    wrapper.setAttribute('aria-label', 'musik plater');
     wrapper.innerHTML = `
         <div class="music-player__header">
             <div class="music-player__meta">
