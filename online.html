@@ -13,6 +13,7 @@
         body {
             background-color: white;
             color: black;
+            font-family: Arial, Helvetica, sans-serif;
             padding-top: 0px;
         }
         .logobar {
@@ -58,6 +59,108 @@
         .page-content {
             margin-right: 350px;
         }
+        .content-panel {
+            margin: 12px 18px 0;
+            border: 1px solid #666666;
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-radius: 0;
+            box-sizing: border-box;
+        }
+        .content-panel__title {
+            margin: 0 0 8px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #222222;
+        }
+        .content-panel__header {
+            display: block;
+            overflow: hidden;
+            margin-bottom: 8px;
+        }
+        .content-panel__toggle {
+            float: right;
+            border: 1px solid #666666;
+            background-color: #d4d0c8;
+            color: #000000;
+            padding: 3px 8px;
+            border-radius: 0;
+            cursor: pointer;
+            font-family: inherit;
+        }
+        .shortcut-form {
+            display: block;
+            margin-bottom: 10px;
+        }
+        .shortcut-form__row {
+            margin-bottom: 8px;
+        }
+        .shortcut-form label {
+            display: block;
+            font-size: 12px;
+            font-weight: bold;
+            margin-bottom: 3px;
+            color: #333333;
+        }
+        .shortcut-form input {
+            width: 100%;
+            max-width: 340px;
+            border: 1px solid #666666;
+            background-color: #ffffff;
+            color: #000000;
+            padding: 5px 6px;
+            border-radius: 0;
+            box-sizing: border-box;
+        }
+        .shortcut-form button,
+        .shortcut-item__button {
+            border: 1px solid #666666;
+            background-color: #d4d0c8;
+            color: #000000;
+            padding: 4px 8px;
+            border-radius: 0;
+            cursor: pointer;
+            font-family: inherit;
+        }
+        .shortcut-form button:hover,
+        .shortcut-item__button:hover {
+            background-color: #e6e6e6;
+        }
+        .shortcut-list {
+            border-top: 1px solid #b5b5b5;
+            margin-top: 8px;
+        }
+        .shortcut-item {
+            border-bottom: 1px solid #b5b5b5;
+            padding: 8px 0;
+            overflow: hidden;
+        }
+        .shortcut-item__link {
+            display: block;
+            color: #003399;
+            font-size: 14px;
+            font-weight: bold;
+            text-decoration: underline;
+            margin-bottom: 6px;
+            word-break: break-word;
+        }
+        .shortcut-item__url {
+            display: block;
+            color: #555555;
+            font-size: 12px;
+            margin-bottom: 6px;
+            word-break: break-word;
+        }
+        .shortcut-item__actions {
+            display: block;
+        }
+        .shortcut-item__button {
+            margin-right: 4px;
+            margin-bottom: 4px;
+        }
+        .shortcut-create--collapsed .shortcut-create__body {
+            display: none;
+        }
         .sidebar {
             position: fixed;
             top: 110px;
@@ -66,6 +169,15 @@
             z-index: 1;
             padding: 8px;
             box-sizing: border-box;
+            border: 1px solid #666666;
+            background-color: #f4f4f4;
+            border-radius: 0;
+        }
+        .sidebar__title {
+            margin: 0 0 8px;
+            font-size: 16px;
+            font-weight: bold;
+            color: #222222;
         }
         @media screen and (max-width: 980px) {
             .page-content {
@@ -80,33 +192,60 @@
     </style>
 </head>
 <body>
+<div>
 <div class="logobar">
     <img title="GAB644 online!" alt="GAB644 online!" height="70px"
-            src="images/online/logo2.png"></img>&nbsp;&nbsp;
+            src="images/online/logo2.png"></img>&nbsp;
             <p style="font-size: 10px; color: rgb(124, 124, 124);">
-                relived guesoo5 and based off of MSN</p><br>
+                relived guesoo5</p><br> 
 </div>
-<div class="topbar2">
+<!-- <div class="topbar2">
     <div class="topbar2__links">
         <a href="/GAB644">GAB644 home</a>
         &#124;&nbsp;&nbsp;
         <a>News</a>
         &#124;&nbsp;&nbsp;
-        <a href="/flashy">Games</a>
+        <a href="/Flashy">Games</a>
     </div>
     <div class="topbar2__clock" id="topbar-clock"></div>
+</div> -->
 </div>
+
 <div class="page-content">
-<iframe height="600px" width="780px" src="https://news.google.com/home/"></iframe>
-<center><p>powered by google news</p></center>
+    <div class="content-panel shortcut-create" id="shortcut-create-panel">
+        <div class="content-panel__header">
+            <div class="content-panel__title">Shortcuts</div>
+            <button type="button" class="content-panel__toggle" id="shortcut-create-toggle">Collapse</button>
+        </div>
+        <div class="shortcut-create__body">
+            <form class="shortcut-form" id="shortcut-form">
+                <div class="shortcut-form__row">
+                    <label for="shortcut-title">Shortcut name</label>
+                    <input id="shortcut-title" type="text" maxlength="40" autocomplete="off">
+                </div>
+                <div class="shortcut-form__row">
+                    <label for="shortcut-url">Shortcut URL</label>
+                    <input id="shortcut-url" type="text" maxlength="200" autocomplete="off">
+                </div>
+                <button type="submit">Add shortcut</button>
+            </form>
+        </div>
+        <div id="shortcut-list" class="shortcut-list"></div>
+    </div>
+    <!-- <div class="content-panel">
+        <div class="content-panel__title">Home page</div>
+        <iframe height="600px" width="780px" src="https://www.aol.com/"></iframe>
+        <center><p>powered by AOL</p></center> 
+    </div> -->
 </div>
 <div class="sidebar">
+    <div class="sidebar__title">Weather</div>
+    <div class="topbar2__clock" id="topbar-clock"></div><br>
     <script src="https://elfsightcdn.com/platform.js" async></script>
     <div class="elfsight-app-5d2357b1-fd5e-452c-8928-b37052f6bbf4" data-elfsight-app-lazy></div>
 </div>
 
 
-<script src="index.js" defer></script>
 <script>
     (function () {
         var clock = document.getElementById('topbar-clock');
@@ -139,6 +278,273 @@
 
         updateClock();
         window.setInterval(updateClock, 1000);
+    }());
+</script>
+<script>
+    (function () {
+        var storageKey = 'gab644-shortcuts';
+        var createPanelKey = 'gab644-shortcut-create-collapsed';
+        var defaultShortcuts = [    
+            { title: 'Games', url: '/Flashy' },
+            { title: 'Google News', url: 'https://news.google.com/home' }
+        ];
+        var createPanel = document.getElementById('shortcut-create-panel');
+        var createToggle = document.getElementById('shortcut-create-toggle');
+        var form = document.getElementById('shortcut-form');
+        var titleInput = document.getElementById('shortcut-title');
+        var urlInput = document.getElementById('shortcut-url');
+        var list = document.getElementById('shortcut-list');
+        var shortcuts;
+
+        function trimText(value) {
+            return String(value || '').replace(/^\s+|\s+$/g, '');
+        }
+
+        function loadShortcuts() {
+            var raw = null;
+            var parsed;
+            var items;
+            var index;
+
+            try {
+                raw = window.localStorage.getItem(storageKey);
+            } catch (error) {
+                raw = null;
+            }
+
+            if (!raw) {
+                return defaultShortcuts.slice(0);
+            }
+
+            try {
+                parsed = JSON.parse(raw);
+            } catch (error2) {
+                return defaultShortcuts.slice(0);
+            }
+
+            if (!parsed || typeof parsed.length !== 'number') {
+                return defaultShortcuts.slice(0);
+            }
+
+            items = [];
+            for (index = 0; index < parsed.length; index += 1) {
+                if (parsed[index] && parsed[index].title && parsed[index].url) {
+                    items.push({
+                        title: String(parsed[index].title),
+                        url: String(parsed[index].url)
+                    });
+                }
+            }
+
+            if (items.length === 0) {
+                return defaultShortcuts.slice(0);
+            }
+
+            return items;
+        }
+
+        function saveShortcuts() {
+            try {
+                window.localStorage.setItem(storageKey, JSON.stringify(shortcuts));
+            } catch (error) {
+                return;
+            }
+        }
+
+        function normalizeUrl(value) {
+            var url = trimText(value);
+
+            if (!url) {
+                return '';
+            }
+
+            if (url.indexOf('http://') === 0 || url.indexOf('https://') === 0 || url.indexOf('/') === 0 || url.indexOf('#') === 0 || url.indexOf('mailto:') === 0) {
+                return url;
+            }
+
+            return 'http://' + url;
+        }
+
+        function clearNode(node) {
+            while (node.firstChild) {
+                node.removeChild(node.firstChild);
+            }
+        }
+
+        function isCreatePanelCollapsed() {
+            try {
+                return window.localStorage.getItem(createPanelKey) === 'true';
+            } catch (error) {
+                return false;
+            }
+        }
+
+        function setCreatePanelCollapsed(isCollapsed) {
+            if (!createPanel) {
+                return;
+            }
+
+            createPanel.className = isCollapsed ? 'content-panel shortcut-create shortcut-create--collapsed' : 'content-panel shortcut-create';
+
+            if (createToggle) {
+                createToggle.appendChild(document.createTextNode(''));
+                createToggle.innerHTML = isCollapsed ? 'Expand' : 'Collapse';
+            }
+
+            try {
+                window.localStorage.setItem(createPanelKey, isCollapsed ? 'true' : 'false');
+            } catch (error) {
+                return;
+            }
+        }
+
+        function moveShortcut(index, direction) {
+            var nextIndex = index + direction;
+            var temp;
+
+            if (nextIndex < 0 || nextIndex >= shortcuts.length) {
+                return;
+            }
+
+            temp = shortcuts[index];
+            shortcuts[index] = shortcuts[nextIndex];
+            shortcuts[nextIndex] = temp;
+            saveShortcuts();
+            renderShortcuts();
+        }
+
+        function removeShortcut(index) {
+            if (!window.confirm('Remove this shortcut?')) {
+                return;
+            }
+
+            shortcuts.splice(index, 1);
+            saveShortcuts();
+            renderShortcuts();
+        }
+
+        function renderShortcuts() {
+            var index;
+            var item;
+            var row;
+            var link;
+            var urlText;
+            var actions;
+            var upButton;
+            var downButton;
+            var removeButton;
+
+            clearNode(list);
+
+            if (shortcuts.length === 0) {
+                item = document.createElement('div');
+                item.className = 'shortcut-item';
+                item.appendChild(document.createTextNode('No shortcuts yet. Add one above.'));
+                list.appendChild(item);
+                return;
+            }
+
+            for (index = 0; index < shortcuts.length; index += 1) {
+                item = shortcuts[index];
+                row = document.createElement('div');
+                row.className = 'shortcut-item';
+
+                link = document.createElement('a');
+                link.className = 'shortcut-item__link';
+                link.href = item.url;
+                link.target = '_blank';
+                link.rel = 'noopener noreferrer';
+                link.appendChild(document.createTextNode(item.title));
+                row.appendChild(link);
+
+                urlText = document.createElement('div');
+                urlText.className = 'shortcut-item__url';
+                urlText.appendChild(document.createTextNode(item.url));
+                row.appendChild(urlText);
+
+                actions = document.createElement('div');
+                actions.className = 'shortcut-item__actions';
+
+                upButton = document.createElement('button');
+                upButton.type = 'button';
+                upButton.className = 'shortcut-item__button';
+                upButton.appendChild(document.createTextNode('Up'));
+                upButton.onclick = (function (shortcutIndex) {
+                    return function () {
+                        moveShortcut(shortcutIndex, -1);
+                    };
+                }(index));
+                actions.appendChild(upButton);
+
+                downButton = document.createElement('button');
+                downButton.type = 'button';
+                downButton.className = 'shortcut-item__button';
+                downButton.appendChild(document.createTextNode('Down'));
+                downButton.onclick = (function (shortcutIndex) {
+                    return function () {
+                        moveShortcut(shortcutIndex, 1);
+                    };
+                }(index));
+                actions.appendChild(downButton);
+
+                removeButton = document.createElement('button');
+                removeButton.type = 'button';
+                removeButton.className = 'shortcut-item__button';
+                removeButton.appendChild(document.createTextNode('Remove'));
+                removeButton.onclick = (function (shortcutIndex) {
+                    return function () {
+                        removeShortcut(shortcutIndex);
+                    };
+                }(index));
+                actions.appendChild(removeButton);
+
+                row.appendChild(actions);
+                list.appendChild(row);
+            }
+        }
+
+        function addShortcut() {
+            var title = trimText(titleInput.value);
+            var url = normalizeUrl(urlInput.value);
+
+            if (!title || !url) {
+                window.alert('Enter both a name and a URL.');
+                return;
+            }
+
+            shortcuts.push({
+                title: title,
+                url: url
+            });
+
+            saveShortcuts();
+            renderShortcuts();
+            titleInput.value = '';
+            urlInput.value = '';
+            titleInput.focus();
+        }
+
+        shortcuts = loadShortcuts();
+
+        if (createPanel && createToggle) {
+            setCreatePanelCollapsed(isCreatePanelCollapsed());
+            createToggle.onclick = function () {
+                setCreatePanelCollapsed(!isCreatePanelCollapsed());
+            };
+        }
+
+        if (form && titleInput && urlInput && list) {
+            form.onsubmit = function (event) {
+                if (event && event.preventDefault) {
+                    event.preventDefault();
+                }
+
+                addShortcut();
+                return false;
+            };
+
+            renderShortcuts();
+        }
     }());
 </script>
 </body>
