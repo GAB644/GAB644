@@ -1,7 +1,9 @@
 const musicPlaylist = [
-    { title: 'Daytona USA - Sky High', src: 'music/Sky High.mp3' },
+    { title: 'Daytona USA Soundtrack - Sky High', src: 'music/Sky High.mp3' },
+    { title: 'Jamiroquai - Canned Heat', src: 'music/Canned Heat.mp3' },
     { title: 'Bomfunk MCs - Freestyler', src: 'music/Freestyler.mp3' },
     { title: 'Tenacious D - Tribute', src: 'https://files.catbox.moe/vf2q3r.mp3' },
+    { title: 'Half-Life 2 Soundtrack - Tracking Device', src: 'music/Tracking Device.mp3' },
     { title: 'Team Fortress 2 - Right Behind You', src: 'music/Right Behind You.mp3' }
 ];
 
@@ -73,6 +75,18 @@ function updateMusicPlayerButtons() {
     }
 }
 
+function updateMusicTrackButtonStates() {
+    const isPlaying = Boolean(musicPlayerState.audio && !musicPlayerState.audio.paused);
+
+    document.querySelectorAll('[data-music-track]').forEach((button) => {
+        const trackIndex = Number.parseInt(button.getAttribute('data-music-track') || '0', 10);
+        const isActiveTrack = trackIndex === musicPlayerState.currentIndex;
+
+        button.classList.toggle('buttonfilled', isPlaying && isActiveTrack);
+        button.classList.toggle('buttonoutline', !(isPlaying && isActiveTrack));
+    });
+}
+
 function ensureMusicPlayer() {
     if (musicPlayerState.audio) {
         return musicPlayerState.audio;
@@ -90,7 +104,7 @@ function ensureMusicPlayer() {
 
     const wrapper = document.createElement('section');
     wrapper.className = 'music-player';
-    wrapper.setAttribute('aria-label', 'musik plater');
+    wrapper.setAttribute('musik plater');
     wrapper.innerHTML = `
         <div class="music-player__header">
             <div class="music-player__meta">
@@ -120,12 +134,14 @@ function ensureMusicPlayer() {
     musicPlayerState.audio.addEventListener('play', () => {
         localStorage.setItem(musicStorageKeys.playing, 'true');
         updateMusicPlayerButtons();
+        updateMusicTrackButtonStates();
         storeMusicState();
         wrapper.classList.add('music-player--visible');
     });
     musicPlayerState.audio.addEventListener('pause', () => {
         localStorage.setItem(musicStorageKeys.playing, 'false');
         updateMusicPlayerButtons();
+        updateMusicTrackButtonStates();
         storeMusicState();
     });
     musicPlayerState.audio.addEventListener('timeupdate', () => {
@@ -179,6 +195,7 @@ function loadTrack(index, shouldPlay, resetTime = true) {
     }
     updateMusicPlayerLabel();
     updateMusicPlayerButtons();
+    updateMusicTrackButtonStates();
 
     if (shouldPlay) {
         musicPlayerState.audio.play().catch(() => {
@@ -234,6 +251,7 @@ function buildMusicPlayer() {
 
     musicPlayerState.pendingSeekTime = storedState.time;
     loadTrack(musicPlayerState.currentIndex, storedState.playing, false);
+    updateMusicTrackButtonStates();
 }
 
 function bindMusicTrackButtons() {
@@ -258,6 +276,7 @@ window.addEventListener('DOMContentLoaded', () => {
     }
     bindMusicTrackButtons();
     updateMusicPlayerButtons();
+    updateMusicTrackButtonStates();
 });
 window.addEventListener('load', updateTopBarState);
 window.addEventListener('beforeunload', syncMusicStateBeforeUnload);
