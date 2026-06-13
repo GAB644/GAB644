@@ -1,3 +1,6 @@
+
+// music player
+
 const musicPlaylist = [
     { title: 'Daytona USA Soundtrack - Sky High', src: 'music/Sky High.mp3' },
     { title: 'Jamiroquai - Canned Heat', src: 'music/Canned Heat.mp3' },
@@ -267,6 +270,8 @@ function syncMusicStateBeforeUnload() {
     storeMusicState();
 }
 
+// scrolling fade effect
+
 window.addEventListener('scroll', updateTopBarState, { passive: true });
 window.addEventListener('DOMContentLoaded', () => {
     updateTopBarState();
@@ -280,6 +285,27 @@ window.addEventListener('DOMContentLoaded', () => {
 });
 window.addEventListener('load', updateTopBarState);
 window.addEventListener('beforeunload', syncMusicStateBeforeUnload);
+
+// easter eggy
+
+function fuck(buttonElement) {
+
+    const audio = new Audio('drybones-death.mp3');
+    audio.play()
+
+    if (buttonElement) {
+      buttonElement.remove();
+    }
+
+    const links = document.querySelectorAll('link[rel="stylesheet"]');
+    links.forEach(link => link.remove());
+
+    const styles = document.querySelectorAll('style');
+    styles.forEach(style => style.remove());
+
+    document.body.removeAttribute('style');
+    document.documentElement.removeAttribute('style');
+}
 
 window.GAB644MusicPlayer = {
     playTrack,
