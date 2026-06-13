@@ -16,6 +16,20 @@
             font-family: Arial, Helvetica, sans-serif;
             padding-top: 0px;
         }
+        button {
+            border: 1px solid #666666;
+            background-color: #d4d0c8;
+            color: #000000;
+            padding: 3px 8px;
+            border-radius: 0;
+            cursor: pointer;
+            font-family: inherit;
+            margin-left: 4px;
+        }
+        button:hover {
+            background-color: #e6e6e6
+        }
+
         .logobar {
             background-color: rgb(179, 217, 240);
             image-rendering: pixelated;
@@ -112,16 +126,6 @@
             border-radius: 0;
             box-sizing: border-box;
         }
-        .shortcut-form button,
-        .shortcut-item__button {
-            border: 1px solid #666666;
-            background-color: #d4d0c8;
-            color: #000000;
-            padding: 4px 8px;
-            border-radius: 0;
-            cursor: pointer;
-            font-family: inherit;
-        }
         .shortcut-form button:hover,
         .shortcut-item__button:hover {
             background-color: #e6e6e6;
@@ -188,19 +192,7 @@
             float: right;
             display: block;
         }
-        .sidebar__button {
-            border: 1px solid #666666;
-            background-color: #d4d0c8;
-            color: #000000;
-            padding: 3px 8px;
-            border-radius: 0;
-            cursor: pointer;
-            font-family: inherit;
-            margin-left: 4px;
-        }
-        .sidebar__button:hover {
-            background-color: #e6e6e6;
-        }
+        
         .weather-widget {
             min-height: 40px;
         }
@@ -213,6 +205,71 @@
                 width: auto;
                 margin: 12px 18px 0;
             }
+        }
+        .search-container {
+            display: inline-block;
+            padding: 5px;
+        }
+
+        .search-container form {
+            display: flex;
+            gap: 4px;
+        }
+
+        .search-container select,
+        .search-container input {
+            height: 28px;
+            font-family: inherit;
+            font-size: 14px;
+            padding: 4px 6px;
+            color: black;
+        }
+
+        .search-container select,
+        .search-container button {
+            background-color: #d4d0c8;
+            cursor: pointer;
+            box-shadow: inset 1px solid #666666;
+        }
+
+        .search-container input {
+            width: 250px;
+            height: 16px;
+        }
+        .notes-container {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            height: 100%;
+            box-sizing: border-box;
+        }
+
+        .notes-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            font-size: 13px;
+            font-weight: bold;
+            padding-bottom: 4px;
+            color: #333;
+        }
+
+        #notesArea {
+            width: 100%;
+            height: 160px;
+            resize: vertical;
+            font-family: 'Ubuntu';
+            font-size: 13px;
+            padding: 6px;
+            border: 1px solid #7f7f7f;
+            background-color: #ffffff;
+            box-sizing: border-box;
+            outline: none;
+        }
+
+        #notesArea:focus {
+            border-color: #000000;
         }
     </style>
 </head>
@@ -237,6 +294,24 @@
 </div>
 
 <div class="page-content">
+    <div class="content-panel">
+        <div class="content-panel__title">Search</div>
+        <div class="search-container">
+  <form id="searchForm" action="https://www.google.com/search" method="GET" target="_blank">
+    <select id="engineSelect">
+      <option value="google">Google</option>
+      <option value="ddg">DuckDuckGo</option>
+      <option value="bing">Bing</option>
+      <option value="wikipedia">Wikipedia</option>
+      <option value="youtube">YouTube</option>
+    </select>
+    
+    <input type="text" id="searchInput" name="q" placeholder="Search Google..." autofocus required>
+    
+    <button type="submit">Search</button>
+  </form>
+</div>
+    </div>
     <div class="content-panel shortcut-create" id="shortcut-create-panel">
         <div class="content-panel__header">
             <div class="content-panel__title">Shortcuts</div>
@@ -257,14 +332,21 @@
         </div>
         <div id="shortcut-list" class="shortcut-list"></div>
     </div>
+    <div class="content-panel">
+        <div class="content-panel__title">Quick Notes</div>
+        <div class="notes-container">
+        <div class="notes-header">
+        <button id="clearNotesBtn">Clear</button>
+        </div>
+        <textarea id="notesArea" placeholder="Write something in here whatever you want to keep track of your things"></textarea>
+        </div>
+        </div>
     <!-- <div class="content-panel">
         <div class="content-panel__title">Home page</div>
         <iframe height="600px" width="780px" src="https://www.aol.com/"></iframe>
         <center><p>powered by AOL</p></center> 
     </div> -->
-    <div class="content-panel">
-        <div class="content-panel__title"></div>
-    </div>
+
 </div>
 <div class="sidebar">
         <div class="sidebar__header">
@@ -281,6 +363,74 @@
 
 <script src="index.js" defer></script>
 <script>
+    document.addEventListener('DOMContentLoaded', () => {
+  const notesArea = document.getElementById('notesArea');
+  const clearNotesBtn = document.getElementById('clearNotesBtn');
+
+  const savedNotes = localStorage.getItem('dashboard_notes');
+  if (savedNotes !== null) {
+    notesArea.value = savedNotes;
+  }
+
+  notesArea.addEventListener('input', () => {
+    localStorage.setItem('dashboard_notes', notesArea.value);
+  });
+
+  clearNotesBtn.addEventListener('click', () => {
+    if (notesArea.value.trim() !== "") {
+      if (confirm("Are you sure you want to clear your scratchpad?")) {
+        notesArea.value = "";
+        localStorage.removeItem('dashboard_notes');
+      }
+    }
+  });
+});
+    document.addEventListener('DOMContentLoaded', () => {
+  const searchForm = document.getElementById('searchForm');
+  const engineSelect = document.getElementById('engineSelect');
+  const searchInput = document.getElementById('searchInput');
+
+  const engines = {
+    google: {
+      action: "https://www.google.com/search",
+      queryParam: "q",
+      placeholder: "Search Google..."
+    },
+    ddg: {
+      action: "https://duckduckgo.com/",
+      queryParam: "q",
+      placeholder: "Search DuckDuckGo..."
+    },
+    bing: {
+      action: "https://www.bing.com/search",
+      queryParam: "q",
+      placeholder: "Search Bing..."
+    },
+    wikipedia: {
+      action: "https://en.wikipedia.org/w/index.php",
+      queryParam: "search",
+      placeholder: "Search Wikipedia..."
+    },
+    youtube: {
+      action: "https://www.youtube.com/results",
+      queryParam: "search_query",
+      placeholder: "Search YouTube..."
+    }
+  };
+
+  engineSelect.addEventListener('change', (e) => {
+    const selectedEngine = engines[e.target.value];
+    
+    if (selectedEngine) {
+      searchForm.action = selectedEngine.action;
+      searchInput.name = selectedEngine.queryParam;
+      searchInput.placeholder = selectedEngine.placeholder;
+      
+      searchInput.focus();
+    }
+  });
+});
+
     (function () {
         var clock = document.getElementById('topbar-clock');
 
