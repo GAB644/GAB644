@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Where's My Sandwich?</title>
+</head>
+<body>
+<center>
+    <h1>WHERES MY SANDWICH!?</h1>
+    <div id="wheresmysandwich"></div>
+</center>
+<script>
+    function onYouTubeIframeAPIReady() {
+        new YT.Player('wheresmysandwich', {
+            width: '560',
+            height: '315',
+            videoId: 'pfGEdmZyVyY',
+            playerVars: {
+                autoplay: 1,
+                playsinline: 1,
+                start: 2,
+                end: 4
+            },
+            events: {
+                onReady: function (event) {
+                    event.target.unMute();
+                    event.target.setVolume(100);
+                    event.target.playVideo();
+                },
+                onStateChange: function (event) {
+                    if (event.data === YT.PlayerState.ENDED) {
+                        window.location.href = 'index.html';
+                    }
+                }
+            }
+        });
+    }
+</script>
+<script src="https://www.youtube.com/iframe_api"></script>
+</body>
+</html>

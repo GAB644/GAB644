@@ -288,24 +288,35 @@ window.addEventListener('beforeunload', syncMusicStateBeforeUnload);
 
 // easter eggy
 
-function fuck(buttonElement) {
+  const eastereggy = [
+    function drybone() {
+      const audio = new Audio('drybones-death.mp3');
+      audio.play()
 
-    const audio = new Audio('drybones-death.mp3');
-    audio.play()
+      document.querySelectorAll('link[rel="stylesheet"], style').forEach(el => el.remove());
+      document.body.removeAttribute('style');
+      document.documentElement.removeAttribute('style');
+    },
 
+    function sandwich() {
+      window.location.href = 'sandwich.html';
+    }
+    /*
+    ,function template() {
+       // something goes here
+    }
+    */
+  ];
+
+  function triggereastereggy(buttonElement) {
     if (buttonElement) {
       buttonElement.remove();
     }
 
-    const links = document.querySelectorAll('link[rel="stylesheet"]');
-    links.forEach(link => link.remove());
-
-    const styles = document.querySelectorAll('style');
-    styles.forEach(style => style.remove());
-
-    document.body.removeAttribute('style');
-    document.documentElement.removeAttribute('style');
-}
+    const randomIndex = Math.floor(Math.random() * eastereggy.length);
+    
+    eastereggy[randomIndex]();
+  }
 
 window.GAB644MusicPlayer = {
     playTrack,
