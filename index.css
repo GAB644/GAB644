@@ -216,9 +216,12 @@ button:focus-visible {
     font-size: 20px;
     line-height: 1;
     cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 }
-.music-player__nav-button:hover {
-    background: rgba(255, 255, 255, 0.14);
+.music-player__nav-button--active {
+    background: rgba(255, 255, 255, 0.24);
 }
 .music-player__audio {
     width: 100%;

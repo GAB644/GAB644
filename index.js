@@ -3,18 +3,21 @@
 
 const musicPlaylist = [
     { title: 'Daytona USA Soundtrack - Sky High', src: 'music/Sky High.mp3' },
+    { title: 'Stan LePard - Velkommen', src: 'music/title.m4a' },
     { title: 'Jamiroquai - Canned Heat', src: 'music/Canned Heat.mp3' },
     { title: 'Bomfunk MCs - Freestyler', src: 'music/Freestyler.mp3' },
     { title: 'Tenacious D - Tribute', src: 'https://files.catbox.moe/vf2q3r.mp3' },
     { title: 'Half-Life 2 Soundtrack - Tracking Device', src: 'music/Tracking Device.mp3' },
-    { title: 'Team Fortress 2 - Right Behind You', src: 'music/Right Behind You.mp3' }
+    { title: 'Team Fortress 2 - Right Behind You', src: 'music/Right Behind You.mp3' },
+    { title: 'The Burns - Avail', src: 'music/Avail.mp3' }
 ];
 
 const musicStorageKeys = {
     index: 'gab644-music-index',
     time: 'gab644-music-time',
     playing: 'gab644-music-playing',
-    volume: 'gab644-music-volume'
+    volume: 'gab644-music-volume',
+    loop: 'gab644-music-loop'
 };
 
 const musicPlayerState = {
@@ -47,7 +50,8 @@ function readStoredMusicState() {
         index: clampTrackIndex(Number.parseInt(localStorage.getItem(musicStorageKeys.index) || '0', 10)),
         time: Math.max(0, Number.parseFloat(localStorage.getItem(musicStorageKeys.time) || '0') || 0),
         playing: localStorage.getItem(musicStorageKeys.playing) === 'true',
-        volume: Math.max(0, Math.min(1, Number.parseFloat(localStorage.getItem(musicStorageKeys.volume) || '1') || 1))
+        volume: Math.max(0, Math.min(1, Number.parseFloat(localStorage.getItem(musicStorageKeys.volume) || '1') || 1)),
+        loop: localStorage.getItem(musicStorageKeys.loop) === 'true'
     };
 }
 
@@ -60,6 +64,7 @@ function storeMusicState() {
     localStorage.setItem(musicStorageKeys.time, String(musicPlayerState.audio.currentTime || 0));
     localStorage.setItem(musicStorageKeys.playing, String(!musicPlayerState.audio.paused));
     localStorage.setItem(musicStorageKeys.volume, String(musicPlayerState.audio.volume));
+    localStorage.setItem(musicStorageKeys.loop, String(musicPlayerState.audio.loop));
 }
 
 function updateMusicPlayerLabel() {
@@ -76,6 +81,8 @@ function updateMusicPlayerButtons() {
     if (musicPlayerState.audio) {
         musicPlayerState.audio.title = musicPlaylist[musicPlayerState.currentIndex]?.title || 'musik plater';
     }
+
+    document.querySelector('[data-music-player-loop]')?.classList.toggle('music-player__nav-button--active', Boolean(musicPlayerState.audio && musicPlayerState.audio.loop));
 }
 
 function updateMusicTrackButtonStates() {
@@ -88,6 +95,16 @@ function updateMusicTrackButtonStates() {
         button.classList.toggle('buttonfilled', isPlaying && isActiveTrack);
         button.classList.toggle('buttonoutline', !(isPlaying && isActiveTrack));
     });
+}
+
+function toggleLoopSingle() {
+    if (!musicPlayerState.audio) {
+        return;
+    }
+
+    musicPlayerState.audio.loop = !musicPlayerState.audio.loop;
+    localStorage.setItem(musicStorageKeys.loop, String(musicPlayerState.audio.loop));
+    updateMusicPlayerButtons();
 }
 
 function ensureMusicPlayer() {
@@ -115,8 +132,9 @@ function ensureMusicPlayer() {
                 <strong class="music-player__title" data-music-player-title></strong>
             </div>
             <div class="music-player__nav">
-                <button type="button" class="music-player__nav-button" data-music-player-prev title="Previous track"><img src="images/bak.png"></img></button>
-                <button type="button" class="music-player__nav-button" data-music-player-next title="Next track"><img src="images/nxt.png"></img></button>
+                <button type="button" class="music-player__nav-button" data-music-player-prev title="Previous song"><img src="images/bak.png"></img></button>
+                <button type="button" class="music-player__nav-button music-player__nav-button--loop" data-music-player-loop title="Loop current song"><img src="images/ref.png"></img></button>
+                <button type="button" class="music-player__nav-button" data-music-player-next title="Next song"><img src="images/nxt.png"></img></button>
             </div>
         </div>
         <audio class="music-player__audio" data-music-player-audio controls preload="auto"></audio>
@@ -132,6 +150,7 @@ function ensureMusicPlayer() {
     wrapper.classList.toggle('music-player--visible', storedState.playing || storedState.time > 0);
 
     wrapper.querySelector('[data-music-player-prev]')?.addEventListener('click', () => stepTrack(-1));
+    wrapper.querySelector('[data-music-player-loop]')?.addEventListener('click', () => toggleLoopSingle());
     wrapper.querySelector('[data-music-player-next]')?.addEventListener('click', () => stepTrack(1));
 
     musicPlayerState.audio.addEventListener('play', () => {
@@ -160,6 +179,7 @@ function ensureMusicPlayer() {
     });
     musicPlayerState.audio.addEventListener('loadedmetadata', () => {
         const stored = readStoredMusicState();
+        musicPlayerState.audio.loop = stored.loop;
         const seekTime = musicPlayerState.pendingSeekTime ?? stored.time;
         musicPlayerState.restoringState = true;
         musicPlayerState.audio.currentTime = Math.min(seekTime, musicPlayerState.audio.duration || seekTime || 0);
@@ -249,6 +269,7 @@ function buildMusicPlayer() {
     const storedState = readStoredMusicState();
     musicPlayerState.currentIndex = storedState.index;
     musicPlayerState.audio.volume = storedState.volume;
+    musicPlayerState.audio.loop = storedState.loop;
     updateMusicPlayerLabel();
     updateMusicPlayerButtons();
 
