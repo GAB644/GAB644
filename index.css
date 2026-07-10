@@ -291,23 +291,27 @@ button:focus-visible {
 
     .link-card,
     .link-card-main {
+        image-rendering: pixelated;
         gap: 8px;
         padding: 8px 6px;
     }
 
     .link-card img,
     .link-card-main img {
+        image-rendering: pixelated;
         width: 88px;
         height: 88px;
     }
 
     .link-card span,
     .link-card-main span {
+        image-rendering: pixelated;
         font-size: 13px;
         white-space: normal;
     }
 
     .link-card small {
+        image-rendering: pixelated;
         font-size: 10px;
         white-space: normal;
         text-align: center;
@@ -316,17 +320,20 @@ button:focus-visible {
 
 @media (max-width: 420px) {
     .link-grid {
+        image-rendering: pixelated;
         gap: 16px 10px;
     }
 
     .link-card img,
     .link-card-main img {
+        image-rendering: pixelated;
         width: 96px;
         height: 96px;
     }
 }
 
 .link-card {
+    image-rendering: pixelated;
     color: #ffffff;
     text-decoration: none;
     display: flex;
@@ -340,6 +347,7 @@ button:focus-visible {
     overflow: hidden;
 }
 .link-card-main {
+    image-rendering: pixelated;
     color: #ffffff;
     text-decoration: none;
     display: flex;
@@ -362,6 +370,7 @@ button:focus-visible {
 }
 .link-card > *,
 .link-card-main > * {
+    image-rendering: pixelated;
     position: relative;
     z-index: 1;
 }
@@ -382,6 +391,7 @@ button:focus-visible {
     image-rendering: auto;
 }
 .link-card-main img {
+    image-rendering: pixelated;
     display: block;
     width: 124px;
     height: 124px;
@@ -389,11 +399,13 @@ button:focus-visible {
     image-rendering: auto;
 }
 .link-card span {
+    image-rendering: pixelated;
     font-size: 16px;
     line-height: 1.15;
     white-space: nowrap;
 }
 .link-card-main span {
+    image-rendering: pixelated;
     font-size: 16px;
     line-height: 1.15;
     white-space: nowrap;
