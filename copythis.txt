@@ -1,0 +1,7 @@
+*correct time of joining is required, this server is not 24/7
+timezone: UTC +01:
+
+radmin username: GAB644 radminy
+radmin password: multiplayergames123
+
+minecraft ip: 26.147.50.150:25565
