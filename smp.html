@@ -77,6 +77,64 @@
         .content-ss img{
             width: 470px;
         }
+        .notch-widget {
+            width: 300px;
+            font-family: Arial, sans-serif;
+            color: #e0e0e0;
+            margin: 20px auto 0 auto;
+            text-align: left;
+        }
+        .notch-header {
+            margin-bottom: 12px;
+            margin: 20px auto 0 auto;
+            text-align: left;
+        }
+        .notch-header img {
+            image-rendering: auto;
+            float: left;
+            width: 30px;
+            height: 30px;
+            margin-right: 12px
+        }
+        .notch-header-text h2 {
+            margin: 0;
+            font-size: 20px;
+            font-weight: bold;
+            color: #ffffff;
+        }
+        .notch-header-text p {
+            margin: 4px 0 0 0;
+            font-size: 13px;
+            color: #c0ceb6;
+        }
+        .notch-posts-box {
+            border-radius: 6px;
+            clear: both;
+            background-color: #383838;
+            padding: 16px;
+            margin-top: 10px;
+            line-height: 40px;
+        }
+        .notch-posts-box h3 {
+            clear: both;
+            margin: 0 0 16px 0;
+            font-size: 18px;
+            font-weight: bold;
+            color: #ffffff;
+        }
+        .post-item {
+            margin-bottom: 40px;
+            line-height: 1.2;
+        }
+        .post-date {
+            font-size: 13px;
+            color: #c0ceb6;
+            margin-bottom: 1px
+        }
+        .post-link {
+            color: #8da8ff;
+            font-size: 14px;
+        }
     </style>
 </head>
 <body>
@@ -94,7 +152,7 @@
         <br>server is vanilla but with a resource pack<br></p>
     </div>
     <div class="main-column">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/crPXFW8raVA?si=2ajLlgvca9L4peb0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?si=fDUxhPqs1prF7KKG&amp;list=PLbhCURdaDOGA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             <div class="content">
                 <div>
                    <p>Welcome to the smp server. this server small and gets only like 3 to 6 players in total. please
@@ -106,8 +164,75 @@
                    , precipice disc replaced with <a href="https://www.youtube.com/watch?v=tGnsCfR90vg">The Burns - Precipice</a>
                    and half of the crimsons textures are replaced with melons. thats why this website is melon themed. and a couple of gui changes.</p>
                 </div>
+                    <br><div class="notch-widget">
+                        <div class="notch-header">
+                        <div class="notch-header-text">
+                        <img src="images/smp/Blogger.png"></img>
+                        <h2>Server Updates</h2>
+                        <p>read servers announcements or updates!</p>
+                    </div>
+                </div>
+                <div class="notch-posts-box">
+                    <h3>Recent posts</h3>
+                        <div id="blogger-posts">Loading posts...</div>
+                    </div>
+                </div>
+<script type="text/javascript">
+  function parseBloggerPosts(data) {
+    var container = document.getElementById('blogger-posts');
+    var entries = (data && data.feed && data.feed.entry) ? data.feed.entry : [];
+    var html = '';
+
+    if (entries.length === 0) {
+      container.innerHTML = 'No recent posts found.';
+      return;
+    }
+
+    var days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+    var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+
+    for (var i = 0; i < entries.length; i++) {
+      var entry = entries[i];
+      var title = entry.title.$t;
+
+      var postUrl = '#';
+      for (var j = 0; j < entry.link.length; j++) {
+        if (entry.link[j].rel === 'alternate') {
+          postUrl = entry.link[j].href;
+          break;
+        }
+      }
+
+      var dateObj = new Date(entry.published.$t);
+      var dayName = days[dateObj.getDay()];
+      var dayNum = dateObj.getDate();
+      var monthName = months[dateObj.getMonth()];
+      
+      var hours = ('0' + dateObj.getHours()).slice(-2);
+      var minutes = ('0' + dateObj.getMinutes()).slice(-2);
+      var seconds = ('0' + dateObj.getSeconds()).slice(-2);
+
+      var formattedDate = dayName + ',' + dayNum + ' ' + monthName + ' ' + hours + ':' + minutes + ':' + seconds;
+
+      html += '<div class="post-item">';
+      html += '  <div class="post-date">' + formattedDate + '</div>';
+      html += '  <a class="post-link" href="' + postUrl + '" target="_blank">' + title + '</a>';
+      html += '</div>';
+    }
+
+    container.innerHTML = html;
+  }
+
+  (function() {
+    var script = document.createElement('script');
+    script.type = 'text/javascript';
+    script.src = 'https://gabsmp.blogspot.com/feeds/posts/default?alt=json-in-script&callback=parseBloggerPosts&max-results=3';
+    document.getElementsByTagName('head')[0].appendChild(script);
+  })();
+</script>
                 <div class="content-ss"><br><br><h2>Screenshots</h2><center>
-                    <img title="Spawn Area" src="images/smp/screenshots/9.png"><br>screenshot by matola200</img><br><br><br>
+                    <img title="Spawn Area" src="images/smp/screenshots/13.png"><br>screenshot by andreysu</img><br><br><br>
+                    <img title="old Spawn Area" src="images/smp/screenshots/9.png"><br>screenshot by matola200</img><br><br><br>
                     <img title="Concert Place" src="images/smp/screenshots/5.png"><br>screenshot by matola200</img><br><br><br>
                     <img title="The Aether Portal" src="images/smp/screenshots/10.png"><br>screenshot by matola200</img><br><br><br>
                     <img title="Matola's House" src="images/smp/screenshots/11.png"><br>screenshot by matola200</img><br><br><br>
