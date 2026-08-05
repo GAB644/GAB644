@@ -9,7 +9,9 @@ const musicPlaylist = [
     { title: 'Tenacious D - Tribute', src: 'https://files.catbox.moe/vf2q3r.mp3' },
     { title: 'Half-Life 2 Soundtrack - Tracking Device', src: 'music/Tracking Device.mp3' },
     { title: 'Team Fortress 2 - Right Behind You', src: 'music/Right Behind You.mp3' },
-    { title: 'The Burns - Avail', src: 'music/Avail.mp3' }
+    { title: 'The Burns - Avail', src: 'music/Avail.mp3' },
+    { title: 'The Burns - Sidewalks', src: 'music/Sidewalks.mp3' },
+    { title: 'The Burns - Precipice', src: 'music/Precipice.mp3' }
 ];
 
 const musicStorageKeys = {
