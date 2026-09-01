@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>GAB644's experiments</title>
+  <style>
+    body { image-rendering: pixelated; font-family: sans-serif; max-width: 500px; margin: 30px auto; padding: 20px; background-color: #1b1b1b; color: white; }
+    input, button, select { background-color: #2e2e2e; color: aliceblue; width: 100%; padding: 8px; margin-top: 5px; margin-bottom: 15px; box-sizing: border-box; }
+    textarea { background-color: black; color: white;width: 100%; height: 100px; font-family: monospace; }
+    .preview { margin-top: 15px; min-height: 40px; }
+  </style>
+</head>
+<body>
+  <center><img src="images/logoex.png" alt="GAB644 experiments"></center>
+
+
+
+
+
+  <br><hr><h3>youtube sub embed gen</h3>
+  
+  <label for="input-id">channel id, or full url containing the channel id, or just copy the channel id on <a href="https://www.youtube.com/account_advanced">advanced settings</a></label>
+  <input type="text" id="input-id" placeholder="e.g. UCnuab_JBqPaIchgXvzeS3tg (yes this is my channel id lol)">
+
+  <label for="count">subscriber count visabillity</label>
+  <select id="count">
+    <option value="default">show count (default)</option>
+    <option value="hidden">hide count</option>
+  </select>
+
+  <button onclick="generateEmbed()">generate sub embed</button>
+
+  <div class="preview" id="preview-area"></div>
+
+  <label for="output-code">Generated HTML:</label>
+  <textarea id="output-code" readonly></textarea>
+
+  <script>
+    function extractChannelId(input) {
+      const match = input.match(/(UC[\w-]{22})/);
+      return match ? match[1] : input.trim();
+    }
+
+    function generateEmbed() {
+      const rawInput = document.getElementById('input-id').value;
+      const countOption = document.getElementById('count').value;
+      const channelId = extractChannelId(rawInput);
+
+      if (!channelId) {
+        alert('enter a valid id u dummy');
+        return;
+      }
+      const width = countOption === 'hidden' ? '86px' : '126px';
+
+
+
+      const embedCode = 
+`<iframe 
+  scrolling="no" frameborder="0"
+  src="https://www.youtube.com/subscribe_embed?channelid=${channelId}&layout=default&count=${countOption}"
+  style="border: 0; width: ${width}; height: 24px; overflow: hidden;">
+</iframe>`;
+
+      document.getElementById('output-code').value = embedCode;
+
+      document.getElementById('preview-area').innerHTML = embedCode;
+    }
+  </script>
+
+</body>
+</html>
