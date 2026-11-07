@@ -1,0 +1,32 @@
+var _____WB$wombat$assign$function_____=function(name){return (globalThis._wb_wombat && globalThis._wb_wombat.local_init && globalThis._wb_wombat.local_init(name))||globalThis[name];};if(!globalThis.__WB_pmw){globalThis.__WB_pmw=function(obj){this.__WB_source=obj;return this;}}{
+let window = _____WB$wombat$assign$function_____("window");
+let self = _____WB$wombat$assign$function_____("self");
+let document = _____WB$wombat$assign$function_____("document");
+let location = _____WB$wombat$assign$function_____("location");
+let top = _____WB$wombat$assign$function_____("top");
+let parent = _____WB$wombat$assign$function_____("parent");
+let frames = _____WB$wombat$assign$function_____("frames");
+let opener = _____WB$wombat$assign$function_____("opener");
+(function(_ds){var window=this;var vS=async function(a){const b=a.h.get("django_language");b&&await a.j.set("language_preference",b)},wS=async function(a){if(!a.h.get("django_language")){const b=await _ds.u();a.h.set("django_language",b.getLocale()||"en",{Kb:15552E3,path:"/"})}},yS=function(a){_ds.I(a.eventHandler);const b=a.querySelector(".devsite-language-selector-select");b&&a.eventHandler.listen(b,"change",c=>{xS(a,c)})},xS=async function(a,b){await _ds.u();a.h.remove("django_language");b=b.target;a.h.set("django_language",
+b.value,{Kb:15552E3,path:"/"});const c=document.documentElement.getAttribute("lang");c&&await zS(a,c,b.value);await vS(a);a=new URL(_ds.Ah().location.toString());a.searchParams.delete("hl");a=_ds.Kc(a.toString());_ds.Ah().location.assign(_ds.wc(a))},zS=async function(a,b,c){a.dispatchEvent(new CustomEvent("devsite-analytics-observation",{detail:{category:"Site-Wide Custom Events",label:"Language Selector",action:`${b} to ${c}`},bubbles:!0}));b={eventData:JSON.stringify({name:"change",type:"languageSelector",
+metadata:{"selected-language":`${c}`,"original-language":`${b}`}})};a.dispatchEvent(new CustomEvent("devsite-analytics-observation-cloudtrack",{detail:b,bubbles:!0}))},AS=class extends _ds.E{constructor(){super(...arguments);this.j=_ds.al();this.eventHandler=new _ds.G;this.h=new _ds.Tt}async connectedCallback(){try{await wS(this),await vS(this)}catch(a){}yS(this)}disconnectedCallback(){_ds.I(this.eventHandler)}Ya(a){a&&(_ds.Jg(this,this.querySelector(".devsite-language-selector-menu"),a.querySelector(".devsite-language-selector-menu")),
+yS(this))}};AS.prototype.updateContent=AS.prototype.Ya;AS.prototype.disconnectedCallback=AS.prototype.disconnectedCallback;AS.prototype.connectedCallback=AS.prototype.connectedCallback;try{window.customElements.define("devsite-language-selector",AS)}catch(a){console.warn("devsite.app.customElement.DevsiteLanguageSelector",a)};})(_ds_www);
+
+}
+
+/*
+     FILE ARCHIVED ON 00:49:41 Mar 22, 2022 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 10:46:08 Nov 07, 2026.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+*/
+/*
+playback timings (ms):
+  capture_cache.get: 2.654
+  load_resource: 370.866 (2)
+  PetaboxLoader3.resolve: 268.768 (2)
+  PetaboxLoader3.datanode: 69.808 (2)
+  revisit.resolve: 63.214
+*/

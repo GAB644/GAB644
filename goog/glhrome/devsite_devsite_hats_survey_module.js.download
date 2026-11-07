@@ -1,0 +1,33 @@
+var _____WB$wombat$assign$function_____=function(name){return (globalThis._wb_wombat && globalThis._wb_wombat.local_init && globalThis._wb_wombat.local_init(name))||globalThis[name];};if(!globalThis.__WB_pmw){globalThis.__WB_pmw=function(obj){this.__WB_source=obj;return this;}}{
+let window = _____WB$wombat$assign$function_____("window");
+let self = _____WB$wombat$assign$function_____("self");
+let document = _____WB$wombat$assign$function_____("document");
+let location = _____WB$wombat$assign$function_____("location");
+let top = _____WB$wombat$assign$function_____("top");
+let parent = _____WB$wombat$assign$function_____("parent");
+let frames = _____WB$wombat$assign$function_____("frames");
+let opener = _____WB$wombat$assign$function_____("opener");
+(function(_ds){var window=this;var zQ=function(a,b,c){return a.h.then(function(d){var e=d[b];if(!e)throw Error("Method not found: "+b);return e.apply(d,c)})},AQ=class{constructor(a){this.h=a;a.then((0,_ds.hd)(function(){},this),()=>{},this)}},CQ=function(a,b,c){for(var d=Array(arguments.length-2),e=2;e<arguments.length;e++)d[e-2]=arguments[e];e=BQ(a,b).then(function(f){return f.apply(null,d)});return new AQ(e)},vR={},BQ=function(a,b){var c=vR[b];if(c)return c;c=(c=_ds.$c(b))?_ds.Pj(c):(new _ds.Lj(function(d,e){var f=(new _ds.qh(document)).createElement("SCRIPT");
+f.async=!0;_ds.Bc(f,_ds.Sf(_ds.dc(a)));f.onload=f.onreadystatechange=function(){f.readyState&&"loaded"!=f.readyState&&"complete"!=f.readyState||d()};f.onerror=e;(document.head||document.getElementsByTagName("head")[0]).appendChild(f)})).then(function(){var d=_ds.$c(b);if(!d)throw Error("Failed to load "+b+" from "+a);return d});return vR[b]=c};var wR=class{constructor(a){this.h=a}v(a){_ds.Tj(zQ(this.h,"requestSurvey",arguments),()=>{},this)}j(a){_ds.Tj(zQ(this.h,"presentSurvey",arguments),()=>{},this)}o(a){_ds.Tj(zQ(this.h,"dismissSurvey",arguments),()=>{},this)}},xR=new _ds.cc(_ds.Kf,"https://web.archive.org/web/20220321100847/https://www.gstatic.com/feedback/js/help/prod/service/lazy.min.js");_ds.Tj(BQ(xR,"help.service.Lazy.create"),()=>{});var yR=function(){return"devsite-hats-survey"},CR=function(){if(zR){let a;null==(a=AR)||a.o({surveyMetadata:{sessionId:zR}});return BR.promise}return Promise.resolve()},DR=async function(a){var b=await _ds.u();let c="AIzaSyArC61vXsxgHizCNzGEDzdTWWhmiZsP2V4";b.hasFlagAccess(186)&&(c=_ds.x(b.getConfig(),18));var d=a.getAttribute("listnr-id");d?(b={locale:b.getLocale()||"en",apiKey:c},d=CQ(xR,"help.service.Lazy.create",d,{apiKey:b.apiKey||b.apiKey,environment:b.environment||b.environment,helpCenterPath:b.Ou||
+b.helpCenterPath,locale:b.locale||b.locale||"en".replace(/-/g,"_"),nonce:b.nonce||b.nonce,productData:b.productData||b.productData,receiverUri:b.$u||b.receiverUri,renderApiUri:b.bv||b.renderApiUri,theme:b.theme||b.theme,window:b.window||b.window}),AR=new wR(d),a.h=AR):console.warn('<devsite-hats-survey> missing attribute "listnr-id"')},GR=function(a,b){let c;null==(c=a.h)||c.j({productData:{customData:{pageUrl:_ds.F().toString()}},surveyData:b,colorScheme:1,authuser:0,customZIndex:1E4,listener:{surveyPrompted:d=>
+{zR=d.sessionId||null;BR=new _ds.mk;ER=BR.h},surveyClosed:()=>{zR=FR=null;ER()}}})},JR=class extends _ds.E{constructor(a){super();this.h=null;a&&(this.h=AR=a)}async connectedCallback(){FR=this;const a=this.getAttribute("hats-id");a&&a!==HR&&(await CR(),this.h||await DR(this),HR=a,await this.dk(a))}disconnectedCallback(){FR=null;_ds.kk(IR,document.body,"devsite-page-changed",()=>{FR||(CR(),HR=null)})}async dk(a){await _ds.u();let b;null==(b=this.h)||b.v({triggerId:a,callback:c=>{c.surveyData&&GR(this,
+c.surveyData)},authuser:0,enableTestingMode:!1})}};JR.prototype.renderSurvey=JR.prototype.dk;JR.prototype.disconnectedCallback=JR.prototype.disconnectedCallback;JR.prototype.connectedCallback=JR.prototype.connectedCallback;JR.closeCurrentSurvey=CR;JR.getTagName=yR;var HR=null,zR=null,FR=null,BR=new _ds.mk,ER=BR.h,IR=new _ds.G,AR=void 0;try{window.customElements.define(yR(),JR)}catch(a){console.warn("devsite.app.customElement.DevsiteHatsSurvey",a)};})(_ds_www);
+
+}
+
+/*
+     FILE ARCHIVED ON 10:08:47 Mar 21, 2022 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 10:46:06 Nov 07, 2026.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+*/
+/*
+playback timings (ms):
+  capture_cache.get: 0.371
+  load_resource: 2552.671 (2)
+  PetaboxLoader3.resolve: 2424.664 (2)
+  PetaboxLoader3.datanode: 124.904 (2)
+  revisit.resolve: 2180.634
+*/

@@ -1,0 +1,34 @@
+var _____WB$wombat$assign$function_____=function(name){return (globalThis._wb_wombat && globalThis._wb_wombat.local_init && globalThis._wb_wombat.local_init(name))||globalThis[name];};if(!globalThis.__WB_pmw){globalThis.__WB_pmw=function(obj){this.__WB_source=obj;return this;}}{
+let window = _____WB$wombat$assign$function_____("window");
+let self = _____WB$wombat$assign$function_____("self");
+let document = _____WB$wombat$assign$function_____("document");
+let location = _____WB$wombat$assign$function_____("location");
+let top = _____WB$wombat$assign$function_____("top");
+let parent = _____WB$wombat$assign$function_____("parent");
+let frames = _____WB$wombat$assign$function_____("frames");
+let opener = _____WB$wombat$assign$function_____("opener");
+(function(_ds){var window=this;var B_=function(){var a=Element;return b=>b instanceof a},C_=function(a){return(0,_ds.P)('<span class="devsite-tooltip-msg">'+_ds.Q(a.wp)+"</span>")};var D_=["dl.google.com"],E_="abc.xyz admob.com android.com blogger.com blogspot.com chrome.com chromium.org domains.google doubleclick.com feedburner.com g.co ggpht.com gmail.com gmodules.com goo.gl google.com google.org googleapis.com googleapps.com googlecode.com googledrive.com googlemail.com googlesource.com googlesyndication.com googletagmanager.com googleusercontent.com gv.com keyhole.com madewithcode.com panoramio.com urchin.com withgoogle.com youtu.be youtube.com ytimg.com".split(" "),F_=
+function(a){const b=Array.from(document.querySelectorAll(".devsite-article-body [title]"));for(const c of b){let d;c.setAttribute("data-title",null!=(d=c.getAttribute("title"))?d:"");c.removeAttribute("title")}if(a.hasAttribute("blocked-link")){a=Array.from(document.getElementsByTagName("a"));for(const c of a)if(a=c.getAttribute("href")){const d=(new URL(a,document.location.origin)).hostname.replace("www.","");!D_.some(e=>-1!==d.indexOf(e))&&E_.some(e=>-1!==d.indexOf(e))&&(c.setAttribute("data-title",
+"This link may not be accessible in your region."),c.removeAttribute("title"))}}},J_=function(a){a.eventHandler.listen(document.body,"devsite-content-updated",()=>{a.v.va()});a.eventHandler.listen(document.body,"onpointermove"in window?"pointermove":"mousemove",b=>{b=b.target;let c=!1;for(;b;){B_()(b)&&(c=G_(b));if(c)break;b=b.parentNode}b&&c?H_(a,b):I_(a)});a.eventHandler.listen(document.body,"focusin",b=>{b=b.target;const c=b.firstElementChild;(b.classList.contains("devsite-nav-title")&&c?G_(c):
+G_(b))?H_(a,b):I_(a)});a.eventHandler.listen(document.body,["devsite-sticky-scroll","devsite-sticky-resize"],()=>{I_(a)})},I_=function(a){if(a.h){a.h=null;var b=a.j;a.j=null;b&&(_ds.nf(b,_ds.Xe,()=>{_ds.Hh(b);_ds.Fh(b)}),window.setTimeout(()=>{_ds.Hh(b);_ds.Fh(b)},1E3),b.style.opacity="0")}},G_=function(a){return a.hasAttribute("no-tooltip")?!1:a.hasAttribute("data-title")||a.hasAttribute("data-tooltip")||a.hasAttribute("tooltip")&&a.clientWidth<a.scrollWidth},H_=function(a,b){if(a.h!==b){I_(a);var c,
+d=b.getAttribute("data-tooltip")||b.getAttribute("data-title")||(null!=(c=b.textContent)?c:"").trim(),e=_ds.M(C_,{wp:d});e.style.opacity="0";document.body.appendChild(e);d=_ds.xh(window);var f=_ds.Ck(b),g=_ds.Ck(e),h=_ds.wk(b);c=h.y+f.height;c+g.height+8>d.height&&(c=h.y-g.height-16);f=h.x+f.width/2-g.width/2;g.width>d.width?f=0:(f=Math.max(f,8),d=d.width-(f+g.width+8),0>d&&(f=f+d-8));e.style.top=`${c}px`;e.style.left=`${f}px`;a.h=b;a.j=e;window.requestAnimationFrame(()=>{e.style.opacity="1"})}},
+K_=class extends _ds.wE{constructor(){super();this.eventHandler=new _ds.G;this.j=this.h=null;this.v=new _ds.gk(()=>void F_(this),250)}connectedCallback(){document.body.hasAttribute("touch")?_ds.Hh(this):(J_(this),this.v.va())}disconnectedCallback(){super.disconnectedCallback();_ds.I(this.eventHandler)}};try{window.customElements.define("devsite-tooltip",K_)}catch(a){console.warn("devsite.app.customElement.DevsiteTooltip",a)};})(_ds_www);
+
+}
+
+/*
+     FILE ARCHIVED ON 00:49:42 Mar 22, 2022 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 10:46:19 Nov 07, 2026.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+*/
+/*
+playback timings (ms):
+  capture_cache.get: 0.377
+  load_resource: 923.984 (2)
+  PetaboxLoader3.resolve: 867.178 (2)
+  PetaboxLoader3.datanode: 53.726 (2)
+  revisit.resolve: 666.832
+*/

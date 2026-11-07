@@ -1,0 +1,32 @@
+var _____WB$wombat$assign$function_____=function(name){return (globalThis._wb_wombat && globalThis._wb_wombat.local_init && globalThis._wb_wombat.local_init(name))||globalThis[name];};if(!globalThis.__WB_pmw){globalThis.__WB_pmw=function(obj){this.__WB_source=obj;return this;}}{
+let window = _____WB$wombat$assign$function_____("window");
+let self = _____WB$wombat$assign$function_____("self");
+let document = _____WB$wombat$assign$function_____("document");
+let location = _____WB$wombat$assign$function_____("location");
+let top = _____WB$wombat$assign$function_____("top");
+let parent = _____WB$wombat$assign$function_____("parent");
+let frames = _____WB$wombat$assign$function_____("frames");
+let opener = _____WB$wombat$assign$function_____("opener");
+(function(_ds){var window=this;var bS=function(a){return(0,_ds.P)('<span class="devsite-heading" role="heading" aria-level="'+_ds.S(a.level)+'"></span>')},cS=function(a){var b=a.id;a=a.label;return(0,_ds.P)('<button type="button" class="devsite-heading-link button-flat material-icons" aria-label="'+_ds.S(a)+'" data-title="'+_ds.S(a)+'" data-id="'+_ds.S(b)+'"></button>')};var dS=async function(a){a.j=Array.from(document.querySelectorAll("h1.add-link[id],h2:not(.no-link)[id],h3:not(.no-link)[id],h4:not(.no-link)[id],h5:not(.no-link)[id],h6:not(.no-link)[id]"));const b=await _ds.u();for(const c of a.j)b.registerIntersectionForElement(c,()=>{var d=c;if(!d.querySelector(".devsite-heading-link")&&(d.classList.contains("add-link")||!("full"===document.body.getAttribute("layout")||_ds.Yh(d,"devsite-dialog",null,3)||_ds.Yh(d,"devsite-selector",null,6)||_ds.Yh(d,"table",null,
+4)))){var e=d.textContent||d.dataset.text;if(e&&d.id){const f="Copy link to this section: "+e,g=_ds.M(bS,{level:d.tagName[1]});for(const h of Array.from(d.childNodes))g.append(h);d.append(g);e=_ds.M(cS,{id:d.id,label:e?f:"Copy link to this section"});d.appendChild(e);d.setAttribute("role","presentation");d.removeAttribute("tabindex")}}b.unregisterIntersectionForElement(c)})},fS=function(a){a.eventHandler.listen(document.body,"devsite-page-changed",()=>{dS(a)});a.eventHandler.listen(document,"click",
+b=>{b=b.target;if(b.classList.contains("devsite-heading-link")){var c=_ds.Yh(b,"devsite-expandable",null,3),d=c?c.id:b.dataset.id;d&&(c=_ds.F(),c.hash=d,d=document.createElement("div"),d.innerText=c.href,_ds.Rp(a,[d]),eS(a,b))}})},eS=async function(a,b){if(a.h){const c=b.getAttribute("aria-label");b.setAttribute("aria-label","Link to this section was copied to the clipboard");_ds.kk(a.eventHandler,a.h,_ds.Xe,()=>{_ds.kk(a.eventHandler,a.h,_ds.Xe,()=>{b.setAttribute("aria-label",c)})})}},gS=class extends _ds.E{constructor(){super();
+this.eventHandler=new _ds.G;this.h=null;this.j=[]}async connectedCallback(){await dS(this);fS(this);this.h=document.querySelector("devsite-snackbar")}async disconnectedCallback(){const a=await _ds.u();for(const b of this.j)a.unregisterIntersectionForElement(b);_ds.I(this.eventHandler)}};try{window.customElements.define("devsite-heading-link",gS)}catch(a){console.warn("Unrecognized DevSite custom element - DevsiteHeadingLink",a)};})(_ds_www);
+
+}
+
+/*
+     FILE ARCHIVED ON 00:49:41 Mar 22, 2022 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 10:46:08 Nov 07, 2026.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+*/
+/*
+playback timings (ms):
+  capture_cache.get: 1.009
+  load_resource: 840.907 (2)
+  PetaboxLoader3.resolve: 708.162 (2)
+  PetaboxLoader3.datanode: 89.764 (2)
+  revisit.resolve: 663.125
+*/

@@ -1,0 +1,30 @@
+var _____WB$wombat$assign$function_____=function(name){return (globalThis._wb_wombat && globalThis._wb_wombat.local_init && globalThis._wb_wombat.local_init(name))||globalThis[name];};if(!globalThis.__WB_pmw){globalThis.__WB_pmw=function(obj){this.__WB_source=obj;return this;}}{
+let window = _____WB$wombat$assign$function_____("window");
+let self = _____WB$wombat$assign$function_____("self");
+let document = _____WB$wombat$assign$function_____("document");
+let location = _____WB$wombat$assign$function_____("location");
+let top = _____WB$wombat$assign$function_____("top");
+let parent = _____WB$wombat$assign$function_____("parent");
+let frames = _____WB$wombat$assign$function_____("frames");
+let opener = _____WB$wombat$assign$function_____("opener");
+(function(_ds){var window=this;var OV=function(a){_ds.Fh(a);if("indeterminate"===a.getAttribute("type")){const b=a.getAttribute("color"),c=document.createElement("div");c.classList.add("devsite-progress--indeterminate");for(let d=1;4>=d;d++){const e=document.createElement("div");e.classList.add(`devsite-progress--indeterminate-${d}`);!b||1!==d&&3!==d||(e.style.backgroundColor=b);c.appendChild(e)}a.appendChild(c)}},PV=class extends _ds.E{static get observedAttributes(){return["color","type"]}connectedCallback(){OV(this)}attributeChangedCallback(a,
+b,c){b!==c&&OV(this)}};PV.prototype.attributeChangedCallback=PV.prototype.attributeChangedCallback;PV.prototype.connectedCallback=PV.prototype.connectedCallback;try{window.customElements.define("devsite-progress",PV)}catch(a){console.warn("devsite.app.customElement.DevsiteProgress",a)};})(_ds_www);
+
+}
+
+/*
+     FILE ARCHIVED ON 00:49:41 Mar 22, 2022 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 10:46:10 Nov 07, 2026.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+*/
+/*
+playback timings (ms):
+  capture_cache.get: 0.681
+  load_resource: 375.259 (2)
+  PetaboxLoader3.resolve: 326.495 (2)
+  PetaboxLoader3.datanode: 31.261 (2)
+  revisit.resolve: 83.387
+*/

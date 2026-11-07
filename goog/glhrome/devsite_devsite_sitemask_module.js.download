@@ -1,0 +1,31 @@
+var _____WB$wombat$assign$function_____=function(name){return (globalThis._wb_wombat && globalThis._wb_wombat.local_init && globalThis._wb_wombat.local_init(name))||globalThis[name];};if(!globalThis.__WB_pmw){globalThis.__WB_pmw=function(obj){this.__WB_source=obj;return this;}}{
+let window = _____WB$wombat$assign$function_____("window");
+let self = _____WB$wombat$assign$function_____("self");
+let document = _____WB$wombat$assign$function_____("document");
+let location = _____WB$wombat$assign$function_____("location");
+let top = _____WB$wombat$assign$function_____("top");
+let parent = _____WB$wombat$assign$function_____("parent");
+let frames = _____WB$wombat$assign$function_____("frames");
+let opener = _____WB$wombat$assign$function_____("opener");
+(function(_ds){var window=this;var zY=class extends _ds.E{constructor(){super();this.eventHandler=new _ds.G}static get observedAttributes(){return["visible"]}connectedCallback(){this.eventHandler.listen(document.body,"devsite-sitemask-show",()=>this.show());this.eventHandler.listen(document.body,"keydown",a=>{"Escape"===a.key&&this.hasAttribute("visible")&&(a.preventDefault(),a.stopPropagation(),this.Ka())});this.eventHandler.listen(document.body,"devsite-sitemask-hide",()=>this.Ka());this.eventHandler.listen(this,"click",()=>
+this.Ka())}attributeChangedCallback(a,b,c){"visible"===a&&(null==c?this.dispatchEvent(new CustomEvent("devsite-sitemask-hidden",{bubbles:!0})):this.dispatchEvent(new CustomEvent("devsite-sitemask-visible",{bubbles:!0})))}disconnectedCallback(){_ds.I(this.eventHandler)}show(){this.setAttribute("visible",this.getAttribute("visible")||"")}Ka(){this.removeAttribute("visible")}};zY.prototype.hide=zY.prototype.Ka;zY.prototype.show=zY.prototype.show;zY.prototype.disconnectedCallback=zY.prototype.disconnectedCallback;
+zY.prototype.attributeChangedCallback=zY.prototype.attributeChangedCallback;zY.prototype.connectedCallback=zY.prototype.connectedCallback;try{window.customElements.define("devsite-sitemask",zY)}catch(a){console.warn("Unrecognized DevSite custom element - DevsiteSitemask",a)};})(_ds_www);
+
+}
+
+/*
+     FILE ARCHIVED ON 00:49:42 Mar 22, 2022 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 10:46:13 Nov 07, 2026.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+*/
+/*
+playback timings (ms):
+  capture_cache.get: 0.45
+  load_resource: 227.755 (2)
+  PetaboxLoader3.resolve: 162.723 (2)
+  PetaboxLoader3.datanode: 61.501 (2)
+  revisit.resolve: 144.595
+*/

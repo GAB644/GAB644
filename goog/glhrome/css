@@ -1,0 +1,41 @@
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Open Sans Light'), local('OpenSans-Light'), url(https://web.archive.org/web/20150209191336im_/http://fonts.gstatic.com/s/opensans/v10/DXI1ORHCpsQm3Vp6mXoaTYnF5uFdDttMLvmWuJdhhgs.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Open Sans'), local('OpenSans'), url(https://web.archive.org/web/20150209191336im_/http://fonts.gstatic.com/s/opensans/v10/cJZKeOuBrn4kERxqtaUH3aCWcynf_cDxXwCLxiixG1c.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 600;
+  src: local('Open Sans Semibold'), local('OpenSans-Semibold'), url(https://web.archive.org/web/20150209191336im_/http://fonts.gstatic.com/s/opensans/v10/MTP_ySUJH_bn48VBG8sNSonF5uFdDttMLvmWuJdhhgs.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Open Sans Bold'), local('OpenSans-Bold'), url(https://web.archive.org/web/20150209191336im_/http://fonts.gstatic.com/s/opensans/v10/k3k702ZOKiLJc3WVjuplzInF5uFdDttMLvmWuJdhhgs.ttf) format('truetype');
+}
+
+/*
+     FILE ARCHIVED ON 19:13:36 Feb 09, 2015 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 10:44:59 Nov 07, 2026.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+*/
+/*
+playback timings (ms):
+  capture_cache.get: 7.434
+  load_resource: 3287.362 (2)
+  PetaboxLoader3.resolve: 488.037 (2)
+  PetaboxLoader3.datanode: 1370.317 (2)
+  revisit.resolve: 2893.403
+*/

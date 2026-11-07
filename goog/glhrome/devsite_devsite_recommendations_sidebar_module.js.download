@@ -1,0 +1,34 @@
+var _____WB$wombat$assign$function_____=function(name){return (globalThis._wb_wombat && globalThis._wb_wombat.local_init && globalThis._wb_wombat.local_init(name))||globalThis[name];};if(!globalThis.__WB_pmw){globalThis.__WB_pmw=function(obj){this.__WB_source=obj;return this;}}{
+let window = _____WB$wombat$assign$function_____("window");
+let self = _____WB$wombat$assign$function_____("self");
+let document = _____WB$wombat$assign$function_____("document");
+let location = _____WB$wombat$assign$function_____("location");
+let top = _____WB$wombat$assign$function_____("top");
+let parent = _____WB$wombat$assign$function_____("parent");
+let frames = _____WB$wombat$assign$function_____("frames");
+let opener = _____WB$wombat$assign$function_____("opener");
+(function(_ds){var window=this;var KW=function(a){var b=a.Xa,c=a.Ug;a='<div class="devsite-recommendations-sidebar-heading" role="heading" aria-level="2"><a href="#recommendations-link" class="devsite-nav-title devsite-recommendations-sidebar-heading-link" data-category="Site-Wide Custom Events" data-label="devsite-recommendation side-nav title" data-action="click" data-tooltip="'+_ds.mB("See content recommendations");a+='"><svg class="devsite-recommendations-sidebar-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path d=\'M12.5,8.5L10,3L7.5,8.5L2,11l5.5,2.5L10,19l2.5-5.5L18,11L12.5,8.5z M18,13l-1.25,2.75L14,17l2.75,1.25L18,21l1.25-2.75 L22,17l-2.75-1.25L18,13z\'/></svg><span class="devsite-nav-text devsite-nav-title">'+
+_ds.Q(c)+'</span></a></div><ul class="devsite-nav-list">';c=b.length;for(let d=0;d<c;d++)a+=JW(b[d]);return(0,_ds.P)(a+"</ul>")},JW=function(a){let b="";const c=[a.getTitle(),_ds.x(a,3),_ds.x(a,4)];b+='<li role="option" class="devsite-nav-item"><a href="'+_ds.S(_ds.X(a.getUrl()+"?"+_ds.x(a,8)))+'" class="devsite-nav-title devsite-recommendations-sidebar-title" data-category="Site-Wide Custom Events" data-label="devsite-recommendation side-nav link" data-action="click"><span class="devsite-nav-text" tooltip="">'+
+_ds.Q(c.filter(d=>0<(""+_ds.bB(d)).length)[0])+'</span></a><div class="significatio-card-meta">Updated <span class="significatio-date" date="'+_ds.S(_ds.xe(a,_ds.CA,7).getSeconds())+'"></span></div></li>';return(0,_ds.P)(b)};var LW=function(a){a.eventHandler.listen(a,"click",b=>{b.target.classList.contains("devsite-nav-title")&&(b=b.target,a.j&&a.j.classList.remove("devsite-nav-active"),b.classList.add("devsite-nav-active"),a.j=b)});a.eventHandler.listen(document,"devsite-on-recommendations",b=>{b=b.Y;if(null==b?0:b.detail)if(b=b.detail,3===_ds.re(b,5,0)){a.render(b);a.h.h();if(b=null==b?void 0:_ds.gI(b)){for(const c of b)if(b=_ds.xe(c,_ds.dq,10))b={targetPage:c.getUrl(),targetRank:_ds.Ee(b,2),targetType:_ds.re(b,3,0),
+targetIdenticalDescriptions:_ds.Ee(b,4),targetTitleWords:_ds.Ee(b,5),targetDescriptionWords:_ds.Ee(b,6),experiment:_ds.x(b,7)},b={category:"Site-Wide Custom Events",action:"recommended-right-nav",label:c.getUrl(),additionalParams:{recommendations:b}},a.dispatchEvent(new CustomEvent("devsite-analytics-observation",{detail:b,bubbles:!0}));a.v.h()}else a.v.o("empty");a.classList.add("recommendations-rendered")}else a.h.h()});a.eventHandler.listen(document.body,"devsite-recommendations-disconnected",
+()=>{_ds.Fh(a);a.classList.remove("recommendations-rendered")})},MW=class extends _ds.E{constructor(a){super();this.timeZone=a;this.eventHandler=new _ds.G(this);this.h=new _ds.mk;this.loaded=this.h.promise;this.v=new _ds.mk;this.j=null}connectedCallback(){LW(this)}disconnectedCallback(){_ds.I(this.eventHandler);this.h.o("Disconnected")}render(a){if(this.isConnected){_ds.L(this,KW,{Xa:_ds.gI(a),Ug:_ds.x(a,6)});a=Array.from(this.querySelectorAll(".significatio-date"));for(const b of a){a=b.getAttribute("date");
+try{b.textContent=(new Date(1E3*Number(a))).toLocaleDateString("default",{month:"short",year:"numeric",day:"numeric",timeZone:this.timeZone})}catch(c){}}}}};try{window.customElements.define("devsite-recommendations-sidebar",MW)}catch(a){console.warn("Unrecognized DevSite custom element - DevsiteRecommendationsSidebar",a)};})(_ds_www);
+
+}
+
+/*
+     FILE ARCHIVED ON 00:49:41 Mar 22, 2022 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 10:46:11 Nov 07, 2026.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+*/
+/*
+playback timings (ms):
+  capture_cache.get: 0.616
+  load_resource: 491.213 (2)
+  PetaboxLoader3.resolve: 366.969 (2)
+  PetaboxLoader3.datanode: 120.94 (2)
+  revisit.resolve: 319.869
+*/

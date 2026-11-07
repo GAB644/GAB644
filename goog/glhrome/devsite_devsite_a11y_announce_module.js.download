@@ -1,0 +1,30 @@
+var _____WB$wombat$assign$function_____=function(name){return (globalThis._wb_wombat && globalThis._wb_wombat.local_init && globalThis._wb_wombat.local_init(name))||globalThis[name];};if(!globalThis.__WB_pmw){globalThis.__WB_pmw=function(obj){this.__WB_source=obj;return this;}}{
+let window = _____WB$wombat$assign$function_____("window");
+let self = _____WB$wombat$assign$function_____("self");
+let document = _____WB$wombat$assign$function_____("document");
+let location = _____WB$wombat$assign$function_____("location");
+let top = _____WB$wombat$assign$function_____("top");
+let parent = _____WB$wombat$assign$function_____("parent");
+let frames = _____WB$wombat$assign$function_____("frames");
+let opener = _____WB$wombat$assign$function_____("opener");
+(function(_ds){var window=this;var HI=function(){return"devsite-a11y-announce"},II=async function(a,b){_ds.Wh(a)===b&&(_ds.Ph(a,""),await _ds.Xi(),await _ds.Xi());_ds.Ph(a,b)},JI=class extends _ds.E{constructor(){super();this.eventHandler=new _ds.G}connectedCallback(){this.setAttribute("aria-live","assertive");this.setAttribute("aria-atomic","true");this.eventHandler.listen(document.body,"devsite-a11y-announce",a=>{a=a.Y;(a=a.detail&&a.detail.message)&&II(this,a)})}disconnectedCallback(){_ds.I(this.eventHandler)}};
+JI.prototype.connectedCallback=JI.prototype.connectedCallback;JI.getTagName=HI;try{window.customElements.define(HI(),JI)}catch(a){console.warn("Unrecognized DevSite custom element - DevsiteA11yAnnounce",a)};})(_ds_www);
+
+}
+
+/*
+     FILE ARCHIVED ON 00:49:41 Mar 22, 2022 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 10:45:58 Nov 07, 2026.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+*/
+/*
+playback timings (ms):
+  capture_cache.get: 0.504
+  load_resource: 405.253 (2)
+  PetaboxLoader3.resolve: 280.166 (2)
+  PetaboxLoader3.datanode: 70.49 (2)
+  revisit.resolve: 255.513
+*/
