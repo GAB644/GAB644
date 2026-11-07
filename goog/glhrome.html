@@ -9,7 +9,11 @@ if(-1<b.indexOf("MSIE")){var c=-1<b.indexOf("MSIE 6")?" lt-ie10 lt-ie9 lt-ie8 lt
     </script>
     <script src="./glhrome/modernizr.js.download">
 </script>
-    
+    <style>
+      a:hover{
+        cursor: pointer;
+      }
+    </style>
     <meta content="initial-scale=1, minimum-scale=1, width=device-width" name="viewport">
     <meta content="Goog Glhrome is a fast, simple and secure web browser, built for the modern web." name="description">
     <title>
@@ -32,17 +36,17 @@ new gweb.analytics.AutoTrack({
     <div class="compact" id="header">
       <div class="g-section g-tpl-160">
         <div class="g-unit g-first" id="header-logo">
-          <a><img alt="Glhrome" data-g-event="nav-logo" data-g-label="consumer-home" id="logo" src="./glhrome/Glhrome_logo_2x.png"></a>
+          <a><img alt="Glhrome" data-g-event="nav-logo" data-g-label="consumer-home" id="logo" src="./glhrome/glhrome_logo_2x.png"></a>
         </div>
         <ul class="g-unit g-section g-tpl-nest" id="nav" role="menubar">
           <li class="g-unit current active">
-            <a aria-haspopup="true" id="browser-menu" role="menuitem" style="width: 133px; height: 64px; border-width: 0px;"><span data-g-event="nav-dropdown" data-g-label="browser-home">Browser</span></a>
+            <a href="glhrome.html" aria-haspopup="true" id="browser-menu" role="menuitem" style="width: 133px; height: 64px; border-width: 0px;"><span data-g-event="nav-dropdown" data-g-label="browser-home">Browser</span></a>
             <ul aria-labelledby="browser-menu" role="menu" style="display: block; left: 0px; top: -82px;">
               <li>
-                <a data-g-event="nav-dropdown" data-g-label="browser-download">For personal computers</a>
+                <a data-g-event="nav-dropdown" data-g-label="browser-download" href="glhrome.html">For personal computers</a>
               </li>
               <li>
-                <a data-g-event="nav-dropdown" data-g-label="browser-mobile">For mobile</a>
+                <a data-g-event="nav-dropdown" data-g-label="browser-mobile" href="glhrome.html">For mobile</a>
               </li>
               <li>
                 <a data-g-event="nav-dropdown" data-g-label="browser-features">Features</a>
@@ -52,6 +56,18 @@ new gweb.analytics.AutoTrack({
               </li>
             </ul>
           </li>
+          <li class="g-unit">
+            <a aria-haspopup="true" id="device-menu" role="menuitem" style="width: 100px; height: 64px; border-width: 0px;"><span data-g-event="nav-dropdown">shit</span></a>
+            <ul role="menu" style="display: block; left: 0px; top: 0px;">
+              <li>
+                <a href="" data-g-event="nav-dropdown">peepee</a>
+              </li>
+              <li>
+                <a href="" data-g-event="nav-dropdown">poopoo</a>
+              </li>
+            </ul>
+          </li>
+          <!--
           <li class="g-unit">
             <a aria-haspopup="true" id="device-menu" role="menuitem" style="width: 167px; height: 64px; border-width: 0px;"><span data-g-event="nav-dropdown" data-g-label="devices-Glhromebooks">Glhromebooks</span></a>
             <ul aria-labelledby="Glhromebooks-menu" role="menu" style="display: block; left: 0px; top: 0px;">
@@ -107,7 +123,7 @@ new gweb.analytics.AutoTrack({
               </li>
             </ul>
           </li>
-        </ul>
+        </ul> -->
       </div>
     </div>
     <div class="browser-landing" id="main">
@@ -140,7 +156,7 @@ new gweb.analytics.AutoTrack({
               <a class="show-dialog-options hide-cros" data-g-event="cta">Download Glhrome
               for another platform</a>
             </p>
-          </div><img alt="" class="hi-dpi empty-area section-hero" src="./glhrome/Glhrome-new.jpg">
+          </div><img alt="" class="hi-dpi empty-area section-hero" src="./glhrome/glhrome-new.jpg">
           <div class="no-Glhrome mobile-only">
             <a class="button download-button mobile-android" data-g-event="cta" data-g-label="desktop-android-download">
             Download for Android</a> <a class="button download-button mobile-ios" data-g-event="cta" data-g-label="desktop-ios-download">Download for iOS</a>
@@ -612,7 +628,7 @@ new gweb.analytics.AutoTrack({
           </div>
         </div>
         <div class="modal-dialog-buttons" id="modal-dialog-buttons">
-          <button class="button install-track goog-buttonset-default" data-g-event="eula" data-g-label="eula-acceptinstall" id="eula-accept" name="accept">Accept and Install</button> <span id="throbber"><img alt="" src="./glhrome/Glhrome_throbber_fast_16.gif"></span>
+          <button class="button install-track goog-buttonset-default" data-g-event="eula" data-g-label="eula-acceptinstall" id="eula-accept" name="accept">Accept and Install</button> <span id="throbber"><img alt="" src="./glhrome/chrome_throbber_fast_16.gif"></span>
         </div>
       </div><span tabindex="0" style="display: none; position: absolute;"></span><script src="./glhrome/glhrome-installer.min.js">
 </script><script>
