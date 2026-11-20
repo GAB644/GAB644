@@ -1,0 +1,1 @@
+welcome to goog, a google alternative. not intended for you to actually switch to it, just a fun non profit project.
