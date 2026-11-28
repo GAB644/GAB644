@@ -3,9 +3,197 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="icon" type="image/x-icon" href="../rsser.png">
+    <title>RSSser</title>
+    <link href="https://2014.oldgoogleskin.pages.dev/style.css" rel="stylesheet" type="text/css" />
+    <style>
+      .header {
+        box-sizing: border-box;
+        min-height: 88px;
+        margin: 0 -8px;
+        padding: 0 36px;
+        border-bottom: 1px solid #ddd;
+        background: #f1f1f1;
+        overflow: hidden;
+      }
+
+      .google-logo {
+        display: block;
+        float: left;
+        width: 162px;
+        height: 48px;
+        margin: 20px 0;
+      }
+
+      .google-logo img {
+        display: block;
+        width: 130px;
+        height: auto;
+        max-width: 100%;
+        mix-blend-mode: multiply;
+      }
+
+      .search-form {
+        float: left;
+        width: calc(100% - 366px);
+        height: 34px;
+        margin: 27px 0 0 44px;
+        overflow: hidden;
+      }
+
+      .search-field {
+        position: relative;
+        float: left;
+        width: calc(100% - 104px);
+      }
+
+      .search-field input {
+        box-sizing: border-box;
+        display: block;
+        width: 100%;
+        height: 34px;
+        padding: 0 36px 0 11px;
+        border: 1px solid #ccc;
+        border-radius: 0;
+        background: #fff;
+        color: #555;
+        font: 18px Arial, sans-serif;
+        outline: none;
+      }
+
+      .search-field input:focus {
+        border-color: #9ab4e8;
+      }
+
+      .dropdown-arrow {
+        position: absolute;
+        top: 50%;
+        right: 7px;
+        width: 0;
+        height: 0;
+        margin-top: -2px;
+        border-top: 5px solid #777;
+        border-right: 5px solid transparent;
+        border-left: 5px solid transparent;
+        pointer-events: none;
+      }
+
+      .search-butt {
+        box-sizing: border-box;
+        display: block;
+        float: right;
+        width: 86px;
+        height: 34px;
+        padding: 0;
+        border: 1px solid #5682ec;
+        border-radius: 2px;
+        background: #608EFA;
+        background: -webkit-linear-gradient(180deg, rgba(96, 142, 250, 1) 0%, rgba(86, 130, 236, 1) 100%);
+        background: -moz-linear-gradient(180deg, rgba(96, 142, 250, 1) 0%, rgba(86, 130, 236, 1) 100%);
+        background: linear-gradient(180deg, rgba(96, 142, 250, 1) 0%, rgba(86, 130, 236, 1) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#608EFA", endColorstr="#5682EC", GradientType=0);
+        line-height: 30px;
+        text-align: center;
+        cursor: pointer;
+      }
+
+      .search-butt:hover {
+        background: #5682ec;
+      }
+
+      .search-butt img {
+        vertical-align: middle;
+        width: 18px;
+        height: 18px;
+      }
+
+      .account {
+        float: right;
+        width: 160px;
+        margin-top: 37px;
+        color: #555 !important;
+        text-decoration: none;
+        font: 14px Arial, sans-serif;
+        text-align: right;
+        white-space: nowrap;
+      }
+
+      .account .dropdown-arrow {
+        position: static;
+        display: inline-block;
+        margin-left: 7px;
+        vertical-align: middle;
+      }
+
+      @media (max-width: 720px) {
+        .header {
+          position: relative;
+          padding: 14px 18px;
+          min-height: 112px;
+        }
+
+        .google-logo {
+          float: none;
+          height: 48px;
+          margin: 0;
+        }
+
+        .search-form {
+          float: none;
+          clear: both;
+          width: 100%;
+          margin: 12px 0 0;
+        }
+
+        .account {
+          position: absolute;
+          top: 30px;
+          right: 18px;
+          float: none;
+          width: auto;
+          margin: 0;
+        }
+
+        .search-butt {
+          width: 56px;
+        }
+
+        .search-field {
+          width: calc(100% - 74px);
+        }
+      }
+    </style>
 </head>
 <body>
-    
+<div class="top-bar">
+  <div class="nav-left">
+    <a style="font-family: 'Roboto';" href="">+You</a>
+    <a style="font-family: 'Roboto';" href="../index.html">Search</a>
+    <a style="font-family: 'Roboto';" href="https://discord.com/invite/qguMFA9cQA">FishCam</a>
+    <a style="font-family: 'Roboto';" href="https://googplus.page.gd">Goog+</a>
+    <a style="font-family: 'Roboto';" href="../glhrome.html">Glhrome</a>
+    <a style="font-family: 'Roboto';" href="../driv/index.html">Driv</a>
+    <a style="font-weight: bold; font-family: 'Roboto'; border-top: #cb553e 1px solid; color: white;" href="index.html">RSSser</a>
+    <a style="font-family: 'Roboto';" href="soon.txt" class="more">More ▾</a>
+  </div>
+  <div class="header">
+    <a class="google-logo" href="../index.html">
+      <img src="../logo11w.png" alt="Goog">
+    </a>
+    <form class="search-form" role="search" action="#" method="get">
+      <div class="search-field">
+        <input type="search" name="q" placeholder="Search RSSser">
+        <span class="dropdown-arrow"></span>
+      </div>
+      <button class="search-butt" type="submit"> <!-- im so inmature. hehehe search BUTT hah ohh man.. -->
+        <img src="https://www.gstatic.com/images/icons/material/system/1x/search_white_24dp.png" alt="">
+      </button>
+    </form>
+    <div class="account"><a href="">
+      <span>test@pmail.com</span>
+      <span class="dropdown-arrow"></span>
+    </a></div>
+  </div>
+</div>
 </body>
 </html>
